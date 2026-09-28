@@ -1,0 +1,84 @@
+/*
+ * Figma Colors foundation — node 3421:1683.
+ * Exact swatch names appear in comments; CSS names use kebab-case.
+ * HEX values match the printed foundation labels.
+ * Blue is labeled #007FFF; its Figma fill/variable differs (#0057FF).
+ */
+:root {
+  /* Black */
+  --black: #000000;
+  /* White */
+  --white: #FFFFFF;
+  /* Gray 50 */
+  --gray-50: #F9FAFB;
+  /* Gray 100 */
+  --gray-100: #E5E7EB;
+  /* Gray 200 */
+  --gray-200: #C0C3C8;
+  /* Gray 300 */
+  --gray-300: #99A1AF;
+  /* Gray 400 */
+  --gray-400: #7F838C;
+  /* Gray 500 */
+  --gray-500: #585960;
+  /* Gray 600 */
+  --gray-600: #2B2B2E;
+  /* Gray 700 */
+  --gray-700: #0F0F10;
+  /* Primary 00 */
+  --primary-00: #F3F5FD;
+  /* Primary 50 */
+  --primary-50: #E9EEFF;
+  /* Primary 100 */
+  --primary-100: #C7D3FF;
+  /* Primary 200 */
+  --primary-200: #8FA7FF;
+  /* Primary 300 */
+  --primary-300: #1939B7;
+  /* Primary 400 */
+  --primary-400: #142F96;
+  /* Primary 500 */
+  --primary-500: #0E2370;
+  /* Primary 600 */
+  --primary-600: #081447;
+  /* Warning 50 */
+  --warning-50: #FFF7ED;
+  /* Warning 100 */
+  --warning-100: #FFE2C2;
+  /* Warning 200 */
+  --warning-200: #FFC078;
+  /* Warning 300 */
+  --warning-300: #F59E0B;
+  /* Warning 400 */
+  --warning-400: #D97706;
+  /* Warning 500 */
+  --warning-500: #92400E;
+  /* Error 50 */
+  --error-50: #FFF1F2;
+  /* Error 100 */
+  --error-100: #FFD5DA;
+  /* Error 200 */
+  --error-200: #FFA1AD;
+  /* Error 300 */
+  --error-300: #EF4444;
+  /* Error 400 */
+  --error-400: #DC2626;
+  /* Error 500 */
+  --error-500: #991B1B;
+  /* Success 50 */
+  --success-50: #EAFBF3;
+  /* Success 100 */
+  --success-100: #C8F3DC;
+  /* Success 200 */
+  --success-200: #8BE7B5;
+  /* Success 300 */
+  --success-300: #22C55E;
+  /* Success 400 */
+  --success-400: #16A34A;
+  /* Success 500 */
+  --success-500: #166534;
+  /* Blue */
+  --blue: #007FFF;
+  /* Light Blue */
+  --light-blue: #F6FBFF;
+}
