@@ -1,0 +1,117 @@
+.fretara-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  gap: 8px;
+  min-height: 40px;
+  padding: 10px 16px;
+  border: 0;
+  border-radius: 8px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+}
+
+.fretara-button--pill {
+  border-radius: 100px;
+}
+
+.fretara-button__icon {
+  display: inline-flex;
+  flex: 0 0 16px;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+
+.fretara-button__icon > svg,
+.fretara-button__icon > img {
+  width: 100%;
+  height: 100%;
+}
+
+.fretara-button--primary {
+  color: var(--white);
+  background-color: var(--primary-300);
+}
+
+.fretara-button--primary:enabled:hover {
+  background-color: var(--primary-400);
+}
+
+.fretara-button--primary:enabled:active {
+  background-color: var(--primary-500);
+}
+
+.fretara-button--primary:disabled {
+  background-color: var(--gray-300);
+}
+
+.fretara-button--secondary {
+  /* CSS borders take space; compensate for Figma's 1px inside stroke. */
+  padding: 9px 15px;
+  border: 1px solid var(--primary-300);
+  color: var(--primary-300);
+  background-color: var(--white);
+}
+
+.fretara-button--secondary:enabled:hover {
+  background-color: var(--primary-00);
+}
+
+.fretara-button--secondary:enabled:active {
+  border-color: var(--primary-400);
+  color: var(--primary-400);
+  background-color: var(--primary-100);
+}
+
+.fretara-button--secondary:disabled {
+  border-color: var(--gray-100);
+  color: var(--gray-300);
+}
+
+.fretara-button--secondary:disabled .fretara-button__icon {
+  color: var(--gray-400);
+}
+
+.fretara-button--tertiary {
+  color: var(--primary-300);
+  background-color: var(--primary-50);
+}
+
+.fretara-button--tertiary:enabled:hover {
+  background-color: var(--primary-100);
+}
+
+.fretara-button--tertiary:enabled:active {
+  color: var(--primary-400);
+  background-color: var(--primary-200);
+}
+
+.fretara-button--tertiary:disabled {
+  color: var(--gray-400);
+  background-color: var(--gray-50);
+}
+
+.fretara-button--link {
+  padding-inline: 12px;
+  color: var(--primary-300);
+  background-color: transparent;
+}
+
+.fretara-button--link:enabled:hover {
+  color: var(--primary-400);
+  background-color: var(--primary-50);
+}
+
+.fretara-button--link:enabled:active {
+  /* Figma labels the variant in its Pressed column "Focused". */
+  color: var(--primary-500);
+  background-color: transparent;
+}
+
+.fretara-button--link:disabled {
+  color: var(--gray-400);
+}
