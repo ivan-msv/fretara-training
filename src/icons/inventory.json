@@ -1,0 +1,856 @@
+[
+  {
+    "component": "HouseFillIcon",
+    "group": "fill",
+    "figmaName": "Icon/ Fill/ house.fill",
+    "nodeId": "4556:2171",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "ChartBarFillIcon",
+    "group": "fill",
+    "figmaName": "Icon/ Fill/ chart.bar.fill",
+    "nodeId": "4556:2173",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "GearshapeFillIcon",
+    "group": "fill",
+    "figmaName": "Icon/ Fill/ gearshape.fill",
+    "nodeId": "4556:2178",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "BoltFillIcon",
+    "group": "fill",
+    "figmaName": "Icon/ Fill/ bolt.fill",
+    "nodeId": "4556:2180",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "PlayFillIcon",
+    "group": "fill",
+    "figmaName": "Icon/ Fill/ play.fill",
+    "nodeId": "4556:2183",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "FlagFillIcon",
+    "group": "fill",
+    "figmaName": "Icon/ Fill/ flag.fill",
+    "nodeId": "4556:2185",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "ClockFillIcon",
+    "group": "fill",
+    "figmaName": "Icon/ Fill/ clock.fill",
+    "nodeId": "4556:2187",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "XmarkCircleFillIcon",
+    "group": "fill",
+    "figmaName": "Icon/ Fill/ xmark.circle.fill",
+    "nodeId": "4556:2189",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "XmarkCircleFillAlternateIcon",
+    "group": "fill",
+    "figmaName": "Icon/ Fill/ xmark.circle.fill",
+    "nodeId": "4556:2191",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": [
+      "Fixed Gray 50 background; foreground inherits currentColor. Requires existing tokens.css.",
+      "Duplicate xmark.circle.fill name; this is the light-background version."
+    ]
+  },
+  {
+    "component": "PlayCircleFillIcon",
+    "group": "fill",
+    "figmaName": "Icon/ Fill/ play.circle.fill",
+    "nodeId": "4556:2193",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": [
+      "Fixed Gray 50 background; foreground inherits currentColor. Requires existing tokens.css."
+    ]
+  },
+  {
+    "component": "AppleLogoFillIcon",
+    "group": "fill",
+    "figmaName": "Icon/ Fill/ apple.logo",
+    "nodeId": "4556:2196",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "BellFillIcon",
+    "group": "fill",
+    "figmaName": "Icon/ Fill/ bell.fill",
+    "nodeId": "4556:2198",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "DocPlaintextFillIcon",
+    "group": "fill",
+    "figmaName": "Icon/ Fill/ doc.plaintext.fill",
+    "nodeId": "4556:2200",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "MoonFillIcon",
+    "group": "fill",
+    "figmaName": "Icon/ Fill/ moon.fill",
+    "nodeId": "4556:2202",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "CheckmarkCircleFillIcon",
+    "group": "fill",
+    "figmaName": "Icon/ Fill/ checkmark.circle.fill",
+    "nodeId": "4556:2204",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "DirectionRightFillIcon",
+    "group": "fill",
+    "figmaName": "Icon/ Fill/ Direction right",
+    "nodeId": "4556:2206",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "PhoneCallRingingFillIcon",
+    "group": "fill",
+    "figmaName": "Icon/ Fill/ Phone Call Ringing",
+    "nodeId": "4556:2208",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "StarFillIcon",
+    "group": "fill",
+    "figmaName": "Icon/ Fill/ Star",
+    "nodeId": "4556:2210",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "UsersFillIcon",
+    "group": "fill",
+    "figmaName": "Icon/ Fill/ users",
+    "nodeId": "4556:2212",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": [
+      "Original two-tone opacity (0.4) retained."
+    ]
+  },
+  {
+    "component": "PendingClockDashFillIcon",
+    "group": "fill",
+    "figmaName": "Icon/ Fill/ Pending Clock dash",
+    "nodeId": "4556:2218",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": [
+      "Original two-tone opacity (0.4) retained."
+    ]
+  },
+  {
+    "component": "SendMessageFillIcon",
+    "group": "fill",
+    "figmaName": "Icon/ Fill/ Send message",
+    "nodeId": "4556:2228",
+    "viewBox": "0 0 24 25",
+    "source": "Figma full-component SVG export",
+    "notes": [
+      "Original two-tone opacity (0.4) retained.",
+      "Original 24 × 25 viewBox and default dimensions retained."
+    ]
+  },
+  {
+    "component": "ClipboardCheckFillIcon",
+    "group": "fill",
+    "figmaName": "Icon/ Fill/ Clipboard check",
+    "nodeId": "4556:2231",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": [
+      "Original two-tone opacity (0.4) retained."
+    ]
+  },
+  {
+    "component": "InfoCircleFillIcon",
+    "group": "fill",
+    "figmaName": "Icon/ Fill/ info circle",
+    "nodeId": "4633:9238",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "GoldFillIcon",
+    "group": "fill",
+    "figmaName": "Icon/ Fill/ Gold",
+    "nodeId": "4633:9241",
+    "viewBox": "0 0 24 24",
+    "source": "Figma image paint and exact crop transform",
+    "notes": [
+      "Original multicolor raster crop; intentionally does not inherit currentColor."
+    ]
+  },
+  {
+    "component": "SilverFillIcon",
+    "group": "fill",
+    "figmaName": "Icon/ Fill/ Silver",
+    "nodeId": "4633:9239",
+    "viewBox": "0 0 24 24",
+    "source": "Figma image paint and exact crop transform",
+    "notes": [
+      "Original multicolor raster crop; intentionally does not inherit currentColor."
+    ]
+  },
+  {
+    "component": "BronzeFillIcon",
+    "group": "fill",
+    "figmaName": "Icon/ Fill/ Bronze",
+    "nodeId": "4633:9240",
+    "viewBox": "0 0 24 24",
+    "source": "Figma image paint and exact crop transform",
+    "notes": [
+      "Original multicolor raster crop; intentionally does not inherit currentColor."
+    ]
+  },
+  {
+    "component": "XmarkCloseIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ xmark close",
+    "nodeId": "4556:2237",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "ArrowLeftIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ arrow.left",
+    "nodeId": "4556:2239",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "ArrowRightIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ arrow.right",
+    "nodeId": "4556:2245",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "ArrowDownIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ arrow.down",
+    "nodeId": "4556:2251",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "ArrowUpIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ arrow.up",
+    "nodeId": "4556:2257",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "ChevronLeftIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ chevron.left",
+    "nodeId": "4556:2263",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "ChevronRightIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ chevron.right",
+    "nodeId": "4556:2265",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "ChevronDownIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ chevron.down",
+    "nodeId": "4556:2267",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "ChevronUpIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ chevron.up",
+    "nodeId": "4556:2269",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "PlusIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ plus",
+    "nodeId": "4556:2272",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "MinusIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ minus",
+    "nodeId": "4556:2274",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "CheckmarkIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ checkmark",
+    "nodeId": "4556:2276",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "MoreIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ more",
+    "nodeId": "4556:2278",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "PencilIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ pencil",
+    "nodeId": "4556:2283",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "ClockCircleIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ clock.circle",
+    "nodeId": "4556:2285",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "TimerIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ timer",
+    "nodeId": "4556:2289",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "SliderHorizontal3Icon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ slider.horizontal.3",
+    "nodeId": "4556:2293",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "TargetIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ target",
+    "nodeId": "4556:2295",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "TargetGoalIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ target, goal",
+    "nodeId": "4556:2301",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "PauseIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ pause",
+    "nodeId": "4556:2303",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "ArrowUpAndDownAndArrowLeftAndRightIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ arrow.up.and.down.and.arrow.left.and.right",
+    "nodeId": "4556:2305",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "StopwatchIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ stopwatch",
+    "nodeId": "4556:2307",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "EraserIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Eraser",
+    "nodeId": "4556:2311",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "WorldWebsiteIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ World website",
+    "nodeId": "4556:2315",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "StarIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Star",
+    "nodeId": "4556:2320",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "RefreshResetIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Refresh- reset",
+    "nodeId": "4556:2322",
+    "viewBox": "0 0 24 25",
+    "source": "Figma full-component SVG export",
+    "notes": [
+      "Original 24 × 25 viewBox and default dimensions retained."
+    ]
+  },
+  {
+    "component": "DashboardIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Dashboard",
+    "nodeId": "4556:2324",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "UsersIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ users",
+    "nodeId": "4556:2332",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "ReportDocumentChartsIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Report Document charts",
+    "nodeId": "4556:2338",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "SettingIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Setting",
+    "nodeId": "4556:2346",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "SendMessageUpRightIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Send message up right ",
+    "nodeId": "4556:2350",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "ClockDashIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Clock dash",
+    "nodeId": "4556:2354",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "UserPersonrIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ User personr",
+    "nodeId": "4556:2363",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": [
+      "Figma spelling “User personr” retained."
+    ]
+  },
+  {
+    "component": "EmailIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ email",
+    "nodeId": "4556:2367",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "CalendarBlankIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Calendar blank",
+    "nodeId": "4556:2371",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "LampIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Lamp",
+    "nodeId": "4589:15328",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "PrinterIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Printer",
+    "nodeId": "4556:2378",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "ExportDownloadIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Export - Download",
+    "nodeId": "4556:2387",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "ReprocessRefreshIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Reprocess - Refresh",
+    "nodeId": "4565:4133",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "WarningErrorIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Warning, error",
+    "nodeId": "4565:4138",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "DeleteIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Delete",
+    "nodeId": "4565:4140",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "AiBookmarkIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Ai bookmark",
+    "nodeId": "4589:15246",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "TextAiIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ text ai ",
+    "nodeId": "4589:15253",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "DocStickyAiIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ doc sticky ai ",
+    "nodeId": "4589:15261",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "SettingAiIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Setting ai ",
+    "nodeId": "4589:15267",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "AiChatAssistantIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Ai chat, assistant",
+    "nodeId": "4589:15898",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "Dollar2Icon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Dollar 2",
+    "nodeId": "4589:15402",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "BulletedListIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Bulleted list",
+    "nodeId": "4589:16013",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "SearchIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Search",
+    "nodeId": "4589:16403",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "CollapseIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Collapse",
+    "nodeId": "4589:16423",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "ExpandIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Expand",
+    "nodeId": "4589:16422",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "CopyIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Copy ",
+    "nodeId": "4603:7410",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "FilterIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Filter",
+    "nodeId": "4633:9311",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "EyeIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Eye",
+    "nodeId": "4633:10769",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "EditIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Edit",
+    "nodeId": "4640:11883",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "PinIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Pin",
+    "nodeId": "4654:16014",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "PaperIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/Paper",
+    "nodeId": "4665:19880",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "LinkIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/Link",
+    "nodeId": "4665:19890",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "InfoCircleIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/info circle",
+    "nodeId": "4870:26362",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "LinkAlternateIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/link",
+    "nodeId": "5031:12375",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": [
+      "Link/link name collision; this is the external-link glyph."
+    ]
+  },
+  {
+    "component": "DocsIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/Docs",
+    "nodeId": "5092:19502",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "FolderFileIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/Folder File",
+    "nodeId": "5092:19503",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "LayersIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/Layers",
+    "nodeId": "5129:23599",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "UndoIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ undo",
+    "nodeId": "5471:13850",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "DocumentFileIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Document file",
+    "nodeId": "5129:23641",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  },
+  {
+    "component": "CheckCircleIcon",
+    "group": "line",
+    "figmaName": "Icon/ Line/ Check circle",
+    "nodeId": "5596:14250",
+    "viewBox": "0 0 24 24",
+    "source": "Figma full-component SVG export",
+    "notes": []
+  }
+]

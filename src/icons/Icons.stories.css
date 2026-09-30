@@ -1,0 +1,130 @@
+.icon-gallery,
+.icon-reference {
+  padding: 32px;
+  color: var(--black);
+  background: var(--white);
+  font-family: var(--font-family-primary), sans-serif;
+  font-size: var(--font-size-14);
+  line-height: var(--line-height-20);
+}
+
+.icon-gallery h1,
+.icon-gallery h2,
+.icon-reference h2 {
+  margin: 0 0 16px;
+}
+
+.icon-gallery__intro {
+  max-width: 72ch;
+  margin: 0 0 24px;
+}
+
+.icon-gallery__examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  align-items: center;
+  margin-block: 24px;
+}
+
+.icon-gallery__examples > span {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.icon-gallery__primary {
+  color: var(--primary-300);
+}
+
+.icon-gallery__error {
+  color: var(--error-500);
+}
+
+.icon-gallery section + section {
+  margin-top: 40px;
+}
+
+.icon-gallery__count {
+  margin-left: 12px;
+  color: var(--gray-500);
+  font-size: var(--font-size-14);
+  font-weight: var(--font-weight-medium);
+}
+
+.icon-gallery__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr));
+  gap: 0 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.icon-gallery__list li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  padding-block: 20px;
+  border-top: 1px solid var(--gray-100);
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+
+.icon-gallery__preview {
+  display: flex;
+  height: 32px;
+  align-items: center;
+}
+
+.icon-gallery__list a {
+  color: var(--primary-300);
+  text-underline-offset: 3px;
+}
+
+.icon-gallery__list a:focus-visible {
+  outline: 2px solid var(--primary-300);
+  outline-offset: 4px;
+}
+
+.icon-gallery__source,
+.icon-gallery__list small {
+  color: var(--gray-500);
+  font-size: var(--font-size-12);
+  line-height: var(--line-height-18);
+}
+
+.icon-reference {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 80px;
+  overflow: auto;
+}
+
+.icon-reference__grid {
+  display: grid;
+  align-items: start;
+  column-gap: 32px;
+}
+
+.icon-reference__grid--line {
+  grid-template-columns: repeat(9, 24px);
+  row-gap: 32px;
+}
+
+.icon-reference__grid--fill {
+  grid-template-columns: repeat(10, 24px);
+  row-gap: 40px;
+}
+
+.icon-gallery pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 480px) {
+  .icon-gallery {
+    padding: 20px;
+  }
+}
