@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Fretara Radio Satoshi';
-  src: url('./assets/checkbox/Satoshi-Variable.ttf') format('truetype');
+  src: url('../assets/fonts/Satoshi-Variable.ttf') format('truetype');
   font-style: normal;
   font-weight: 300 900;
   font-display: swap;
@@ -41,15 +41,15 @@
 
 .fretara-radio-button__control:checked {
   border: 0;
-  background-image: url('./assets/radio-button/selected.svg');
+  background-image: url('./assets/selected.svg');
 }
 
 .fretara-radio-button:hover .fretara-radio-button__control:enabled:checked {
-  background-image: url('./assets/radio-button/selected-hover.svg');
+  background-image: url('./assets/selected-hover.svg');
 }
 
 .fretara-radio-button:active .fretara-radio-button__control:enabled:checked {
-  background-image: url('./assets/radio-button/selected-pressed.svg');
+  background-image: url('./assets/selected-pressed.svg');
 }
 
 /* Figma's Focused preview has a 0px shadow; keyboard focus remains visible. */
@@ -75,7 +75,7 @@
 }
 
 .fretara-radio-button__control:disabled:checked {
-  background-image: url('./assets/radio-button/disabled-selected.svg');
+  background-image: url('./assets/disabled-selected.svg');
 }
 
 .fretara-radio-button__content {

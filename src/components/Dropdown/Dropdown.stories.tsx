@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { useState } from 'react'
 import { Dropdown } from './Dropdown'
-import { SearchIcon } from '../icons/line'
+import { SearchIcon } from '../../icons/line'
 
 const options = [
   { value: 'a', label: 'Option A' },

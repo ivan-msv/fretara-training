@@ -1,8 +1,8 @@
 import { useEffect, useId, useLayoutEffect, useRef, useState, type ButtonHTMLAttributes, type CSSProperties, type ReactNode } from 'react'
 import { createPortal } from 'react-dom'
-import { ChevronDownIcon, CheckmarkIcon } from '../icons/line'
-import '../styles/tokens.css'
-import '../styles/typography.css'
+import { ChevronDownIcon, CheckmarkIcon } from '../../icons/line'
+import '../../styles/tokens.css'
+import '../../styles/typography.css'
 import './Dropdown.css'
 
 export type DropdownOption = { value: string; label: string; disabled?: boolean }

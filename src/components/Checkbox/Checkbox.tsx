@@ -1,6 +1,6 @@
 import { useId, type ComponentPropsWithRef } from 'react'
-import '../styles/tokens.css'
-import '../styles/typography.css'
+import '../../styles/tokens.css'
+import '../../styles/typography.css'
 import './Checkbox.css'
 
 export type CheckboxState =

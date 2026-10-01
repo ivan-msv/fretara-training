@@ -1,6 +1,6 @@
 import type { ButtonHTMLAttributes, ReactNode } from 'react'
-import '../styles/tokens.css'
-import '../styles/typography.css'
+import '../../styles/tokens.css'
+import '../../styles/typography.css'
 import './Button.css'
 
 export type ButtonProps = {

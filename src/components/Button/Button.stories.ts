@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { createElement } from 'react'
 import { Button } from './Button'
-import * as lineIcons from '../icons/line'
-import * as fillIcons from '../icons/fill'
+import * as lineIcons from '../../icons/line'
+import * as fillIcons from '../../icons/fill'
 
 const iconEntries = [
   ...Object.entries(lineIcons).map(([name, Icon]) => ({ name, Icon, group: 'Line' })),

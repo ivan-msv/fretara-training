@@ -1,6 +1,6 @@
 import { useId, type ComponentPropsWithRef } from 'react'
-import '../styles/tokens.css'
-import '../styles/typography.css'
+import '../../styles/tokens.css'
+import '../../styles/typography.css'
 import './RadioButton.css'
 
 export type RadioButtonProps = Omit<ComponentPropsWithRef<'input'>, 'type' | 'children'> & {

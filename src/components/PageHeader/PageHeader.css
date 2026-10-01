@@ -1,0 +1,83 @@
+.fretara-page-header {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  font-family: var(--font-family-primary);
+}
+
+.fretara-page-header__back {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 6px;
+  padding: 4px 0;
+  border: 0;
+  color: var(--gray-500);
+  background: none;
+  cursor: pointer;
+}
+
+.fretara-page-header__back::after {
+  position: absolute;
+  inset: -8px;
+  content: '';
+}
+
+.fretara-page-header__back svg { width: 16px; height: 16px; }
+.fretara-page-header__back:hover { color: var(--gray-700); }
+.fretara-page-header__back:focus-visible,
+.fretara-page-header__more:focus-visible { outline: 2px solid var(--primary-300); outline-offset: 2px; }
+
+.fretara-page-header__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  min-width: 0;
+}
+
+.fretara-page-header__summary { min-width: 0; }
+.fretara-page-header__title-row { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; min-width: 0; }
+.fretara-page-header__title { margin: 0; color: var(--black); overflow-wrap: anywhere; }
+.fretara-page-header__description { max-width: 75ch; margin: 4px 0 0; color: var(--gray-500); overflow-wrap: anywhere; }
+.fretara-page-header__actions,
+.fretara-page-header__buttons { display: flex; align-items: center; gap: 8px; }
+.fretara-page-header__buttons { flex-wrap: wrap; }
+.fretara-page-header__actions { flex: none; gap: 16px; }
+
+.fretara-page-header__more {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius-default);
+  color: var(--black);
+  background: var(--white);
+  cursor: pointer;
+}
+
+.fretara-page-header__more::after {
+  position: absolute;
+  inset: -2px;
+  content: '';
+}
+
+.fretara-page-header__more:hover { background: var(--gray-50); }
+.fretara-page-header__more:active { background: var(--gray-100); }
+.fretara-page-header__more svg { width: 20px; height: 20px; }
+
+@media (max-width: 700px) {
+  .fretara-page-header__content { align-items: flex-start; flex-direction: column; gap: 16px; }
+  .fretara-page-header__actions { width: 100%; flex-wrap: wrap; }
+}
+
+@media (max-width: 420px) {
+  .fretara-page-header__buttons { flex: 1 1 100%; }
+  .fretara-page-header__buttons .fretara-button { flex: 1 1 auto; }
+}

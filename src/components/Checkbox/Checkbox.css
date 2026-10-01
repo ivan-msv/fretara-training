@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'Fretara Checkbox Satoshi';
-  src: url('./assets/checkbox/Satoshi-Variable.ttf') format('truetype');
+  src: url('../assets/fonts/Satoshi-Variable.ttf') format('truetype');
   font-style: normal;
   font-weight: 300 900;
   font-display: swap;
@@ -43,17 +43,17 @@
 
 .fretara-checkbox__control:checked {
   border: 0;
-  background-image: url('./assets/checkbox/selected.svg');
+  background-image: url('./assets/selected.svg');
 }
 
 .fretara-checkbox:hover .fretara-checkbox__control:enabled:checked,
 .fretara-checkbox[data-state='selected-hover'] .fretara-checkbox__control {
-  background-image: url('./assets/checkbox/selected-hover.svg');
+  background-image: url('./assets/selected-hover.svg');
 }
 
 .fretara-checkbox:active .fretara-checkbox__control:enabled:checked,
 .fretara-checkbox[data-state='selected-pressed'] .fretara-checkbox__control {
-  background-image: url('./assets/checkbox/selected-pressed.svg');
+  background-image: url('./assets/selected-pressed.svg');
 }
 
 /* Figma's Focused preview has a 0px shadow; keyboard focus remains visible. */
@@ -77,7 +77,7 @@
 }
 
 .fretara-checkbox__control:disabled:checked {
-  background-image: url('./assets/checkbox/disabled-selected.svg');
+  background-image: url('./assets/disabled-selected.svg');
 }
 
 .fretara-checkbox__content {

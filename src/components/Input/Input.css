@@ -1,7 +1,7 @@
 /* Reuse the existing asset, including when Input is loaded on its own. */
 @font-face {
   font-family: 'Satoshi Variable';
-  src: url('./assets/checkbox/Satoshi-Variable.ttf') format('truetype');
+  src: url('../assets/fonts/Satoshi-Variable.ttf') format('truetype');
   font-style: normal;
   font-weight: 300 900;
   font-display: swap;

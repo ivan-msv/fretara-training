@@ -1,6 +1,6 @@
 import type { HTMLAttributes, ReactNode } from 'react'
-import '../styles/tokens.css'
-import '../styles/typography.css'
+import '../../styles/tokens.css'
+import '../../styles/typography.css'
 import './StatusBadge.css'
 
 export type StatusBadgeStatus = 'default' | 'success' | 'warning' | 'error' | 'neutral' | 'blue' | 'disabled'
@@ -14,7 +14,7 @@ export type StatusBadgeProps = {
   leadingIcon?: ReactNode
 } & Omit<HTMLAttributes<HTMLSpanElement>, 'children'>
 
-const assets = import.meta.glob<string>('./assets/status-badge/*.svg', {
+const assets = import.meta.glob<string>('./assets/*.svg', {
   eager: true,
   query: '?url',
   import: 'default',
@@ -43,11 +43,11 @@ export function StatusBadge({
       ].filter(Boolean).join(' ')}
     >
       {type === 'status' && showDot && (
-        <img src={assets[`./assets/status-badge/${status}-dot.svg`]} alt="" aria-hidden="true" />
+        <img src={assets[`./assets/${status}-dot.svg`]} alt="" aria-hidden="true" />
       )}
       {showLeadingIcon && (
         <span className="fretara-status-badge__icon" aria-hidden="true">
-          {leadingIcon ?? <img src={assets[`./assets/status-badge/${status}-icon.svg`]} alt="" />}
+          {leadingIcon ?? <img src={assets[`./assets/${status}-icon.svg`]} alt="" />}
         </span>
       )}
       <span>{label}</span>

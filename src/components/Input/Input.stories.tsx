@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { expect, userEvent, within } from 'storybook/test'
 import { useState } from 'react'
-import { SearchIcon } from '../icons/line/SearchIcon'
+import { SearchIcon } from '../../icons/line/SearchIcon'
 import { Input, type InputProps } from './Input'
 import './Input.stories.css'
 

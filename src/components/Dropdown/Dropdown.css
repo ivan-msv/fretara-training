@@ -1,7 +1,7 @@
 /* Reuse the Satoshi font asset already supplied with the Fretara foundations. */
 @font-face {
   font-family: 'Satoshi Variable';
-  src: url('./assets/checkbox/Satoshi-Variable.ttf') format('truetype');
+  src: url('../assets/fonts/Satoshi-Variable.ttf') format('truetype');
   font-weight: 300 900;
   font-style: normal;
   font-display: swap;

@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
 import { createElement } from 'react'
 import { StatusBadge } from './StatusBadge'
-import * as lineIcons from '../icons/line'
-import * as fillIcons from '../icons/fill'
+import * as lineIcons from '../../icons/line'
+import * as fillIcons from '../../icons/fill'
 import './StatusBadge.stories.css'
 
 const statuses = ['default', 'success', 'warning', 'error', 'neutral', 'blue', 'disabled'] as const
