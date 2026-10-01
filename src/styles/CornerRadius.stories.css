@@ -1,0 +1,36 @@
+.radius-foundation {
+  padding: 24px;
+  color: var(--gray-700);
+  background: var(--white);
+  font-family: var(--font-family-primary), sans-serif;
+  font-size: var(--font-size-14);
+  line-height: var(--line-height-24);
+}
+
+.radius-foundation a {
+  color: var(--primary-300);
+}
+
+.radius-foundation__scale {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 32px 12px;
+  max-width: 880px;
+  margin-block: 32px;
+  padding: 0;
+  list-style: none;
+}
+
+.radius-foundation__scale li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.radius-foundation__swatch {
+  width: 56px;
+  height: 56px;
+  /* Match the Figma radius preview fill; this is not a color token. */
+  background: #3859f5;
+}

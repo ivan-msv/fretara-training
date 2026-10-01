@@ -1,0 +1,69 @@
+/* Figma Status/Badge, 4601:2616. Inset strokes preserve the 26px / 22px heights. */
+.fretara-status-badge {
+  --status-background: var(--primary-00);
+  --status-border: var(--primary-100);
+  --status-foreground: var(--primary-300);
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  gap: 4px;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  background: var(--status-background);
+  box-shadow: inset 0 0 0 1px var(--status-border);
+  color: var(--status-foreground);
+  white-space: nowrap;
+}
+
+.fretara-status-badge--badge { padding: 2px 8px; }
+
+.fretara-status-badge--success {
+  --status-background: var(--success-50);
+  --status-border: var(--success-100);
+  --status-foreground: var(--success-500);
+}
+
+.fretara-status-badge--warning {
+  --status-background: var(--warning-50);
+  --status-border: var(--warning-100);
+  --status-foreground: var(--warning-500);
+}
+
+.fretara-status-badge--error {
+  --status-background: var(--error-50);
+  --status-border: var(--error-100);
+  --status-foreground: var(--error-500);
+}
+
+.fretara-status-badge--neutral {
+  --status-background: var(--gray-100);
+  --status-border: var(--gray-200);
+  --status-foreground: var(--gray-600);
+}
+
+/* These Figma values differ from the Colors foundation's --blue swatch. */
+.fretara-status-badge--blue {
+  --status-background: #d7ebff;
+  --status-border: #cadaf9;
+  --status-foreground: #0057ff;
+}
+
+.fretara-status-badge--disabled {
+  --status-background: var(--gray-100);
+  --status-border: transparent;
+  --status-foreground: var(--gray-400);
+}
+
+.fretara-status-badge > img,
+.fretara-status-badge__icon { flex: none; }
+
+.fretara-status-badge__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+}
+
+.fretara-status-badge img { display: block; }
+.fretara-status-badge__icon > svg { width: 16px; height: 16px; }

@@ -116,4 +116,15 @@
   /* Letter spacing */
   --letter-spacing-tight: -1px;
   --letter-spacing-normal: 0px;
+
+  /* Corner Radius foundation — Figma node 4844:5330. */
+  --radius-none: 0px;
+  --radius-xs: 1px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-default: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-full: 100px;
 }

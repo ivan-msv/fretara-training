@@ -7,14 +7,14 @@
   min-height: 40px;
   padding: 10px 16px;
   border: 0;
-  border-radius: 8px;
+  border-radius: var(--radius-default);
   text-align: center;
   text-decoration: none;
   vertical-align: middle;
 }
 
 .fretara-button--pill {
-  border-radius: 100px;
+  border-radius: var(--radius-full);
 }
 
 .fretara-button__icon {
