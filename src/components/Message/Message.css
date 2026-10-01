@@ -1,0 +1,103 @@
+.fretara-message {
+  --message-background: var(--gray-50);
+  --message-border: var(--gray-100);
+  --message-icon-background: var(--gray-100);
+  --message-foreground: var(--black);
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  padding: 8px 24px 8px 16px;
+  border: 1px solid var(--message-border);
+  border-radius: var(--radius-default);
+  background: var(--message-background);
+  color: var(--message-foreground);
+  box-sizing: border-box;
+}
+
+.fretara-message--error {
+  --message-background: var(--error-50);
+  --message-border: var(--error-100);
+  --message-icon-background: var(--error-100);
+  --message-foreground: var(--error-500);
+}
+
+.fretara-message--warning {
+  --message-background: var(--warning-50);
+  --message-border: var(--warning-100);
+  --message-icon-background: var(--warning-100);
+  --message-foreground: var(--warning-500);
+}
+
+.fretara-message--success {
+  --message-background: var(--success-50);
+  --message-border: var(--success-100);
+  --message-icon-background: var(--success-100);
+  --message-foreground: var(--success-500);
+}
+
+.fretara-message--info {
+  --message-background: var(--primary-50);
+  --message-border: var(--primary-100);
+  --message-icon-background: var(--primary-100);
+  --message-foreground: var(--primary-500);
+}
+
+.fretara-message__icon {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-default);
+  background: var(--message-icon-background);
+}
+
+.fretara-message__icon > svg {
+  width: 20px;
+  height: 20px;
+}
+
+.fretara-message__content {
+  display: flex;
+  min-width: 0;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  overflow-wrap: anywhere;
+}
+
+.fretara-message__heading,
+.fretara-message__description {
+  display: block;
+}
+
+.fretara-message__dismiss {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.fretara-message__dismiss:hover { background: color-mix(in srgb, currentColor 8%, transparent); }
+.fretara-message__dismiss:active { background: color-mix(in srgb, currentColor 14%, transparent); }
+.fretara-message__dismiss:focus-visible { outline: 2px solid currentColor; outline-offset: 1px; }
+
+.fretara-message__dismiss > svg {
+  width: 16px;
+  height: 16px;
+}
