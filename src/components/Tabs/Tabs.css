@@ -1,0 +1,120 @@
+@font-face {
+  font-family: 'Satoshi Variable';
+  src: url('../assets/fonts/Satoshi-Variable.ttf') format('truetype');
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+.fretara-tabs {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.fretara-tabs__list {
+  display: flex;
+  overflow-x: auto;
+  background: var(--white);
+  /* Inside stroke, beneath the selected indicator, as in Figma. */
+  box-shadow: inset 0 -1px var(--gray-200);
+}
+
+.fretara-tab {
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+  padding: 0 0 2px;
+  border: 0;
+  border-radius: var(--radius-none);
+  background: transparent;
+  color: var(--gray-500);
+  cursor: pointer;
+  white-space: nowrap;
+  text-align: start;
+}
+
+.fretara-tab__content {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 12px;
+  border-radius: var(--radius-md);
+}
+
+.fretara-tab__icon {
+  display: inline-flex;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  color: var(--gray-400);
+}
+
+.fretara-tab__icon > svg {
+  width: 16px;
+  height: 16px;
+}
+
+.fretara-tab__count {
+  padding: 1px 6px;
+  border-radius: var(--radius-default);
+  background: var(--gray-100);
+  color: var(--gray-500);
+  font-size: var(--font-size-12);
+  font-weight: var(--font-weight-medium);
+  /* Figma's count uses 16px, unlike the foundation's 12/18 body style. */
+  line-height: 16px;
+}
+
+.fretara-tab:enabled:hover .fretara-tab__content,
+.fretara-tab:focus-visible .fretara-tab__content {
+  background: var(--gray-50);
+}
+
+.fretara-tab:focus-visible {
+  outline: none;
+}
+
+.fretara-tab:focus-visible .fretara-tab__content {
+  outline: 1.5px solid var(--primary-300);
+  outline-offset: -1.5px;
+}
+
+.fretara-tab[aria-selected='true'] {
+  color: var(--gray-700);
+}
+
+.fretara-tab[aria-selected='true'] .fretara-tab__label {
+  font-weight: var(--font-weight-bold);
+}
+
+.fretara-tab[aria-selected='true'] .fretara-tab__icon {
+  color: inherit;
+}
+
+.fretara-tab[aria-selected='true'] .fretara-tab__count {
+  background: var(--primary-00);
+  color: var(--primary-300);
+}
+
+.fretara-tab[aria-selected='true']::after {
+  position: absolute;
+  inset: auto 0 0;
+  height: 2px;
+  border-radius: var(--radius-xs);
+  background: var(--primary-300);
+  content: '';
+}
+
+.fretara-tab:disabled {
+  color: var(--gray-300);
+  cursor: not-allowed;
+}
+
+.fretara-tab:disabled .fretara-tab__icon {
+  color: inherit;
+}
+
+.fretara-tab:disabled .fretara-tab__count {
+  background: var(--gray-50);
+  color: var(--gray-300);
+}

@@ -1,0 +1,8 @@
+/* Load the shared typeface before any component story renders. */
+@font-face {
+  font-family: 'Satoshi Variable';
+  src: url('../src/components/assets/fonts/Satoshi-Variable.ttf') format('truetype');
+  font-weight: 300 900;
+  font-style: normal;
+  font-display: swap;
+}
