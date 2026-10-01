@@ -1,0 +1,123 @@
+@font-face {
+  font-family: 'Fretara Checkbox Satoshi';
+  src: url('./assets/checkbox/Satoshi-Variable.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+.fretara-checkbox {
+  --font-family-primary: 'Fretara Checkbox Satoshi', sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-block: 2px;
+  max-width: 100%;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.fretara-checkbox__control {
+  appearance: none;
+  box-sizing: border-box;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  border: 1.5px solid var(--gray-300);
+  border-radius: var(--radius-sm);
+  background: var(--white) center / 16px 16px no-repeat;
+  cursor: inherit;
+}
+
+.fretara-checkbox:hover .fretara-checkbox__control:enabled,
+.fretara-checkbox[data-state='hover'] .fretara-checkbox__control {
+  border-color: var(--gray-400);
+}
+
+.fretara-checkbox:active .fretara-checkbox__control:enabled,
+.fretara-checkbox[data-state='pressed'] .fretara-checkbox__control {
+  border-color: var(--gray-400);
+  background-color: var(--gray-50);
+}
+
+.fretara-checkbox__control:checked {
+  border: 0;
+  background-image: url('./assets/checkbox/selected.svg');
+}
+
+.fretara-checkbox:hover .fretara-checkbox__control:enabled:checked,
+.fretara-checkbox[data-state='selected-hover'] .fretara-checkbox__control {
+  background-image: url('./assets/checkbox/selected-hover.svg');
+}
+
+.fretara-checkbox:active .fretara-checkbox__control:enabled:checked,
+.fretara-checkbox[data-state='selected-pressed'] .fretara-checkbox__control {
+  background-image: url('./assets/checkbox/selected-pressed.svg');
+}
+
+/* Figma's Focused preview has a 0px shadow; keyboard focus remains visible. */
+.fretara-checkbox__control:focus-visible {
+  outline: 2px solid var(--primary-200);
+  outline-offset: 2px;
+}
+
+.fretara-checkbox .fretara-checkbox__control[aria-invalid='true']:not(:checked) {
+  border-color: var(--error-400);
+  background-color: var(--white);
+}
+
+.fretara-checkbox[data-disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.fretara-checkbox__control:disabled {
+  background-color: var(--gray-50);
+}
+
+.fretara-checkbox__control:disabled:checked {
+  background-image: url('./assets/checkbox/disabled-selected.svg');
+}
+
+.fretara-checkbox__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  text-align: start;
+  overflow-wrap: anywhere;
+}
+
+.fretara-checkbox__label {
+  display: flex;
+  align-items: flex-start;
+  gap: 2px;
+  color: var(--gray-700);
+}
+
+.fretara-checkbox__required {
+  color: var(--error-400);
+  font-weight: var(--font-weight-bold);
+  line-height: normal;
+}
+
+.fretara-checkbox__description {
+  color: var(--gray-400);
+}
+
+.fretara-checkbox__error {
+  color: var(--error-400);
+  line-height: normal;
+}
+
+.fretara-checkbox[data-disabled] .fretara-checkbox__label,
+.fretara-checkbox[data-disabled] .fretara-checkbox__description {
+  color: var(--gray-500);
+}
+
+@media (forced-colors: active) {
+  .fretara-checkbox__control {
+    appearance: auto;
+  }
+}

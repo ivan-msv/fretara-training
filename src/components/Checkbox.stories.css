@@ -1,0 +1,19 @@
+.checkbox-gallery {
+  --font-family-primary: 'Fretara Checkbox Satoshi', sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 32px;
+  padding: 16px;
+}
+
+.checkbox-gallery__column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.checkbox-gallery__heading {
+  color: var(--gray-500);
+}
