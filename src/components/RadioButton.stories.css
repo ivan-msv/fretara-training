@@ -1,0 +1,37 @@
+.radio-gallery, .radio-group {
+  --font-family-primary: 'Fretara Radio Satoshi', sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 32px;
+  padding: 16px;
+}
+
+.radio-gallery__column, .radio-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.radio-gallery__heading {
+  color: var(--gray-500);
+}
+
+/* Static interaction previews belong only to the gallery, not the component API. */
+.radio-gallery [data-preview='hover'] input,
+.radio-gallery [data-preview='pressed'] input {
+  border-color: var(--gray-400);
+}
+
+.radio-gallery [data-preview='pressed'] input {
+  background-color: var(--gray-50);
+}
+
+.radio-gallery [data-preview='selected-hover'] input {
+  background-image: url('./assets/radio-button/selected-hover.svg');
+}
+
+.radio-gallery [data-preview='selected-pressed'] input {
+  background-image: url('./assets/radio-button/selected-pressed.svg');
+}

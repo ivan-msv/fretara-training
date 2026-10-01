@@ -1,0 +1,121 @@
+@font-face {
+  font-family: 'Fretara Radio Satoshi';
+  src: url('./assets/checkbox/Satoshi-Variable.ttf') format('truetype');
+  font-style: normal;
+  font-weight: 300 900;
+  font-display: swap;
+}
+
+.fretara-radio-button {
+  --font-family-primary: 'Fretara Radio Satoshi', sans-serif;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-block: 2px;
+  max-width: 100%;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.fretara-radio-button__control {
+  appearance: none;
+  box-sizing: border-box;
+  flex: 0 0 16px;
+  width: 16px;
+  height: 16px;
+  margin: 0;
+  border: 1.5px solid var(--gray-300);
+  border-radius: var(--radius-full);
+  background: var(--white) center / 16px 16px no-repeat;
+  cursor: inherit;
+}
+
+.fretara-radio-button:hover .fretara-radio-button__control:enabled {
+  border-color: var(--gray-400);
+}
+
+.fretara-radio-button:active .fretara-radio-button__control:enabled {
+  border-color: var(--gray-400);
+  background-color: var(--gray-50);
+}
+
+.fretara-radio-button__control:checked {
+  border: 0;
+  background-image: url('./assets/radio-button/selected.svg');
+}
+
+.fretara-radio-button:hover .fretara-radio-button__control:enabled:checked {
+  background-image: url('./assets/radio-button/selected-hover.svg');
+}
+
+.fretara-radio-button:active .fretara-radio-button__control:enabled:checked {
+  background-image: url('./assets/radio-button/selected-pressed.svg');
+}
+
+/* Figma's Focused preview has a 0px shadow; keyboard focus remains visible. */
+.fretara-radio-button__control:focus-visible {
+  outline: 2px solid var(--primary-200);
+  outline-offset: 2px;
+}
+
+.fretara-radio-button .fretara-radio-button__control[aria-invalid='true']:not(:checked) {
+  border-color: var(--error-400);
+  background-color: var(--white);
+}
+
+.fretara-radio-button[data-disabled],
+.fretara-radio-button:has(.fretara-radio-button__control:disabled) {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.fretara-radio-button__control:disabled {
+  border-color: var(--gray-200);
+  background-color: var(--gray-50);
+}
+
+.fretara-radio-button__control:disabled:checked {
+  background-image: url('./assets/radio-button/disabled-selected.svg');
+}
+
+.fretara-radio-button__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  text-align: start;
+  overflow-wrap: anywhere;
+}
+
+.fretara-radio-button__label {
+  display: flex;
+  align-items: flex-start;
+  gap: 2px;
+  color: var(--gray-700);
+}
+
+.fretara-radio-button__required {
+  color: var(--error-400);
+  font-weight: var(--font-weight-bold);
+  line-height: normal;
+}
+
+.fretara-radio-button__description {
+  color: var(--gray-400);
+}
+
+.fretara-radio-button__error {
+  color: var(--error-400);
+  line-height: normal;
+}
+
+.fretara-radio-button:has(.fretara-radio-button__control:disabled) .fretara-radio-button__label,
+.fretara-radio-button:has(.fretara-radio-button__control:disabled) .fretara-radio-button__description {
+  color: var(--gray-300);
+}
+
+@media (forced-colors: active) {
+  .fretara-radio-button__control {
+    appearance: auto;
+  }
+}
