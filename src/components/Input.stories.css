@@ -1,0 +1,19 @@
+.input-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  gap: 24px;
+}
+
+.input-gallery__group {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  gap: 24px;
+  max-width: 100%;
+}
+
+.input-gallery__group h2,
+.input-gallery__group p {
+  margin: 0;
+}
