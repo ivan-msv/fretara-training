@@ -1,75 +1,129 @@
-# React + TypeScript + Vite
+# Fretara UI
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Fretara UI is a React and TypeScript component library built from the Fretara Figma design system. The project turns design specifications into reusable, accessible components and documents their variants and interaction states in Storybook.
 
-Currently, two official plugins are available:
+## Project goals
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Reproduce the Fretara visual language accurately from Figma.
+- Build reusable components with small, semantic APIs.
+- Preserve native browser behavior, keyboard support, and accessible markup.
+- Centralize color, typography, and corner-radius values as design tokens.
+- Use Storybook as the component catalog and visual review environment.
 
-## React Compiler
+## Implemented so far
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Area | Components and assets |
+| --- | --- |
+| Actions | Button |
+| Form controls | Checkbox, Dropdown, Input, Radio Button |
+| Navigation | Tabs, Tab Item, Page Header |
+| Feedback | Message, Status Badge, Toast |
+| Data display | Table, toolbar, pagination, and reusable cell content |
+| Foundations | Color tokens, typography styles, corner-radius stories, and Satoshi Variable font |
+| Icons | Reusable line and fill React icon sets with a Storybook catalog |
 
-## Expanding the ESLint configuration
+The components include meaningful states and variants such as disabled, focused, selected, validation, loading/empty data, controlled and uncontrolled values, single and multiple selection, and responsive layouts where applicable.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Accessibility and interaction
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+The component APIs build on native HTML attributes and behavior. Current accessibility work includes:
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- Keyboard navigation for dropdowns and tabs.
+- Appropriate labels, descriptions, validation attributes, and focus states for form controls.
+- Semantic tab, table, pagination, status, alert, and live-region markup.
+- Icon colors based on `currentColor` where appropriate.
+- Storybook interaction scenarios for behavior that cannot be verified by a static preview alone.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## Tech stack
 
+- React 19
+- TypeScript 6
+- Vite 8
+- Storybook 10
+- ESLint 10
+- Plain CSS with shared design tokens
+
+## Getting started
+
+### Prerequisites
+
+- Node.js 20.19+ or 22.12+
+- npm
+
+### Installation
+
+```bash
+git clone git@github.com:ivan-msv/fretara-training.git
+cd fretara-training
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+### Run Storybook
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Storybook is the main workspace for exploring and reviewing the component library.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm run storybook
 ```
+
+Open [http://localhost:6006](http://localhost:6006) in your browser.
+
+### Run the Vite app
+
+```bash
+npm run dev
+```
+
+Open the local URL printed by Vite. The app currently provides a lightweight project entry point; component development happens primarily in Storybook.
+
+## Available commands
+
+| Command | Purpose |
+| --- | --- |
+| `npm run dev` | Start the Vite development server |
+| `npm run build` | Type-check and create a production build |
+| `npm run lint` | Run ESLint across the project |
+| `npm run storybook` | Start Storybook on port 6006 |
+| `npm run build-storybook` | Create a static Storybook build |
+| `npm run preview` | Preview the Vite production build locally |
+
+## Project structure
+
+```text
+Fretara/
+├── .storybook/             # Storybook configuration and global preview styles
+├── src/
+│   ├── components/         # Components, styles, stories, and component notes
+│   ├── icons/              # Line and fill icon components and icon catalog
+│   ├── styles/             # Shared design tokens and typography utilities
+│   ├── App.tsx             # Vite application entry view
+│   └── main.tsx            # React bootstrap
+├── AGENTS.md               # Project development guidelines
+└── package.json            # Scripts and dependencies
+```
+
+Most reusable components keep their implementation, styles, stories, and supporting documentation together:
+
+```text
+src/components/ComponentName/
+├── ComponentName.tsx
+├── ComponentName.css
+├── ComponentName.stories.tsx
+└── ComponentName.README.md  # Included when extra usage notes are useful
+```
+
+## Working with the design system
+
+Figma is the source of truth for component appearance and supported variants. Before adding new visual values, check the shared files in `src/styles` and reuse an existing token whenever it represents the design. Reusable components should include Storybook stories covering their meaningful variants and states.
+
+Before opening a review, run:
+
+```bash
+npm run lint
+npm run build
+npm run build-storybook
+```
+
+## Current status
+
+This is an actively developed training project. The core foundations and an initial set of reusable components are complete; additional Fretara components and composed product screens can be added incrementally from Figma.
