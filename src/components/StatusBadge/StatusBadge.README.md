@@ -21,6 +21,6 @@ import { CheckmarkCircleFillIcon } from '../../icons/fill'
 
 Storybook: **Fretara / Statuses and Badges**, including the complete 14-variant gallery and icon controls.
 
-The SVGs in `assets` are locally stored Figma exports: 6×6 dots and 16×16 bells. The blue variant intentionally preserves Figma's #0057ff foreground, #d7ebff background, and #cadaf9 border, rather than changing the foundation's --blue token. Strokes are inset to preserve Figma dimensions.
+The built-in 6×6 dot and 16×16 Figma bell inherit the status foreground through `currentColor`. The blue variant intentionally preserves Figma's #0057ff foreground, #d7ebff background, and #cadaf9 border, rather than changing the foundation's --blue token. Strokes are inset to preserve Figma dimensions.
 
 Typography reuses `heading-12-bold`. Like existing components, it requires the consuming app to provide Satoshi Variable; this repository currently does not bundle that font. The disabled palette follows Figma, including its reduced text contrast.

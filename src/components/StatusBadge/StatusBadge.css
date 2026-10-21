@@ -54,8 +54,15 @@
   --status-foreground: var(--gray-400);
 }
 
-.fretara-status-badge > img,
+.fretara-status-badge__dot,
 .fretara-status-badge__icon { flex: none; }
+
+.fretara-status-badge__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: var(--radius-full);
+  background: currentColor;
+}
 
 .fretara-status-badge__icon {
   display: inline-flex;
