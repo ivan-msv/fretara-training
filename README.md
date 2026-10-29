@@ -2,6 +2,8 @@
 
 Fretara UI is a React and TypeScript component library built from the Fretara Figma design system. The project turns design specifications into reusable, accessible components and documents their variants and interaction states in Storybook.
 
+[Explore the Storybook catalog](https://ivan-msv.github.io/fretara-training/)
+
 ## Project goals
 
 - Reproduce the Fretara visual language accurately from Figma.
@@ -16,13 +18,20 @@ Fretara UI is a React and TypeScript component library built from the Fretara Fi
 | --- | --- |
 | Actions | Button |
 | Form controls | Checkbox, Dropdown, Input, Radio Button |
-| Navigation | Tabs, Tab Item, Page Header |
+| Navigation | Navbar, Sidebar, Sidebar Item, Tabs, Tab Item, Page Header |
 | Feedback | Message, Status Badge, Toast |
 | Data display | Table, toolbar, pagination, and reusable cell content |
 | Foundations | Color tokens, typography styles, corner-radius stories, and Satoshi Variable font |
 | Icons | Reusable line and fill React icon sets with a Storybook catalog |
 
 The components include meaningful states and variants such as disabled, focused, selected, validation, loading/empty data, controlled and uncontrolled values, single and multiple selection, and responsive layouts where applicable.
+
+## Latest additions
+
+- **Navbar:** workspace selection using the existing Dropdown, controlled and uncontrolled selection, configurable labels, and a logout callback with a disabled state. Stories cover the open workspace menu, logout focus and disabled states, and a narrow layout.
+- **Sidebar:** expanded and collapsed navigation, active links, nested navigation items, and a configurable navigation label. Collapse state is controlled through `collapsed` and `onCollapsedChange`; the Interactive story demonstrates the state wiring.
+- **Status Badge:** consolidated icon rendering with a default bell icon and support for a custom `leadingIcon`.
+- **Published Storybook:** a GitHub Actions workflow builds and deploys the component catalog to GitHub Pages.
 
 ## Accessibility and interaction
 
@@ -31,6 +40,7 @@ The component APIs build on native HTML attributes and behavior. Current accessi
 - Keyboard navigation for dropdowns and tabs.
 - Appropriate labels, descriptions, validation attributes, and focus states for form controls.
 - Semantic tab, table, pagination, status, alert, and live-region markup.
+- Sidebar navigation labels, `aria-current` for active links, accessible labels for collapsed items, and labeled expand/collapse buttons.
 - Icon colors based on `currentColor` where appropriate.
 - Storybook interaction scenarios for behavior that cannot be verified by a static preview alone.
 
@@ -68,6 +78,12 @@ npm run storybook
 
 Open [http://localhost:6006](http://localhost:6006) in your browser.
 
+### Storybook deployment
+
+The [Deploy Storybook workflow](.github/workflows/deploy-storybook.yml) runs on pushes to `main` and can also be started manually through GitHub Actions. It uses Node.js 24, installs dependencies with `npm ci`, builds Storybook, and deploys `storybook-static` to GitHub Pages.
+
+The repository's Pages source must be set to **GitHub Actions**. The catalog is published at [ivan-msv.github.io/fretara-training](https://ivan-msv.github.io/fretara-training/).
+
 ### Run the Vite app
 
 ```bash
@@ -91,6 +107,7 @@ Open the local URL printed by Vite. The app currently provides a lightweight pro
 
 ```text
 Fretara/
+├── .github/workflows/      # Storybook build and GitHub Pages deployment
 ├── .storybook/             # Storybook configuration and global preview styles
 ├── src/
 │   ├── components/         # Components, styles, stories, and component notes
