@@ -1,18 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react-vite'
-import { Checkbox, type CheckboxState } from './Checkbox'
+import { Checkbox, type CheckboxProps } from './Checkbox'
 import './Checkbox.stories.css'
 
-const states: CheckboxState[] = [
+const states = [
   'default', 'hover', 'pressed', 'focused', 'selected', 'selected-hover',
   'selected-pressed', 'disabled', 'disabled-selected', 'error',
-]
+] as const
 
 const meta = {
   title: 'Fretara/Checkbox',
   component: Checkbox,
   parameters: { layout: 'padded' },
   argTypes: {
-    state: { control: 'select', options: [undefined, ...states], description: 'Fixed Figma preview; leave unset for interactive use.' },
     labelText: { control: 'text' },
     descriptionText: { control: 'text' },
     errorText: { control: 'text' },
@@ -34,13 +33,13 @@ export default meta
 type Story = StoryObj<typeof meta>
 
 export const Playground: Story = {}
-export const Default: Story = { args: { state: 'default' } }
-export const Hover: Story = { args: { state: 'hover' } }
-export const Pressed: Story = { args: { state: 'pressed' } }
-export const Focused: Story = { args: { state: 'focused' } }
+export const Default: Story = { args: {} }
+export const Hover: Story = { parameters: { pseudo: { hover: true } } }
+export const Pressed: Story = { parameters: { pseudo: { active: true } } }
+export const Focused: Story = { parameters: { pseudo: { focusVisible: true } } }
 export const Selected: Story = { args: { defaultChecked: true } }
-export const SelectedHover: Story = { args: { state: 'selected-hover' } }
-export const SelectedPressed: Story = { args: { state: 'selected-pressed' } }
+export const SelectedHover: Story = { args: { defaultChecked: true }, parameters: { pseudo: { hover: true } } }
+export const SelectedPressed: Story = { args: { defaultChecked: true }, parameters: { pseudo: { active: true } } }
 export const Disabled: Story = { args: { disabled: true } }
 export const DisabledSelected: Story = { args: { disabled: true, defaultChecked: true } }
 export const Error: Story = { args: { invalid: true } }
@@ -50,18 +49,27 @@ export const WithErrorMessage: Story = { args: { invalid: true, showErrorMessage
 export const WithoutLabel: Story = { args: { showLabel: false } }
 
 export const AllVariants: Story = {
-  parameters: { controls: { disable: true } },
+  parameters: { controls: { disable: true }, pseudo: { hover: ['.checkbox-preview--hover', '.checkbox-preview--selected-hover'], active: ['.checkbox-preview--pressed', '.checkbox-preview--selected-pressed'], focusVisible: ['.checkbox-preview--focused input'] } },
   render: () => (
     <div className="checkbox-gallery" aria-label="All Figma checkbox variants">
       {states.map((state) => (
         <div className="checkbox-gallery__column" key={state}>
           <span className="checkbox-gallery__heading body-12-medium">{state.replaceAll('-', ' ')}</span>
-          <Checkbox state={state} />
-          <Checkbox state={state} showRequired showDescription />
-          <Checkbox state={state} showRequired showDescription showErrorMessage />
-          <Checkbox state={state} showLabel={false} />
+          <Checkbox {...previewProps(state)} />
+          <Checkbox {...previewProps(state)} showRequired showDescription />
+          <Checkbox {...previewProps(state)} showRequired showDescription showErrorMessage />
+          <Checkbox {...previewProps(state)} showLabel={false} />
         </div>
       ))}
     </div>
   ),
+}
+
+function previewProps(state: typeof states[number]): CheckboxProps {
+  return {
+    className: `checkbox-preview--${state}`,
+    defaultChecked: state.includes('selected'),
+    disabled: state.startsWith('disabled'),
+    invalid: state === 'error',
+  }
 }

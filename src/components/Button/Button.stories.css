@@ -1,0 +1,3 @@
+.button-gallery { display: grid; gap: 24px; }
+.button-gallery__states { display: flex; flex-wrap: wrap; gap: 24px; }
+.button-gallery__cell { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; padding: 4px; }

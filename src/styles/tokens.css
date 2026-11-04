@@ -1,8 +1,9 @@
 /*
  * Figma Colors foundation — node 3421:1683.
  * Exact swatch names appear in comments; CSS names use kebab-case.
- * HEX values match the printed foundation labels.
- * Blue is labeled #007FFF; its Figma fill/variable differs (#0057FF).
+ * Values follow Figma fills/variables. Blue uses #0057FF; the printed
+ * #007FFF label at node 3421:1741 is stale. Component-only colors below
+ * are promoted to shared foundation styles without changing existing ramps.
  */
 :root {
   /* Black */
@@ -78,7 +79,12 @@
   /* Success 500 */
   --success-500: #166534;
   /* Blue */
-  --blue: #007FFF;
+  --blue: #0057FF;
+  /* Blue surface / Blue border — StatusBadge fills */
+  --blue-surface: #D7EBFF;
+  --blue-border: #CADAF9;
+  /* Warning border — Toast stroke (distinct from Warning 100) */
+  --warning-border: #FED7AA;
   /* Light Blue */
   --light-blue: #F6FBFF;
 

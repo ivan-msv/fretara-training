@@ -1,0 +1,4 @@
+.foundation-colors { color: var(--gray-700); }
+.foundation-colors__grid { display: flex; flex-wrap: wrap; gap: 24px; }
+.foundation-colors figure { margin: 0; }
+.foundation-colors__swatch { width: 180px; height: 90px; border: 1px solid var(--gray-100); margin-bottom: 8px; }

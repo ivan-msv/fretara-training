@@ -115,3 +115,8 @@
 .fretara-button--link:disabled {
   color: var(--gray-400);
 }
+
+.fretara-button:focus-visible {
+  outline: 2px solid var(--primary-300);
+  outline-offset: 2px;
+}

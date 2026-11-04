@@ -3,14 +3,7 @@ import '../../styles/tokens.css'
 import '../../styles/typography.css'
 import './Checkbox.css'
 
-export type CheckboxState =
-  | 'default' | 'hover' | 'pressed' | 'focused'
-  | 'selected' | 'selected-hover' | 'selected-pressed'
-  | 'disabled' | 'disabled-selected' | 'error'
-
 export type CheckboxProps = Omit<ComponentPropsWithRef<'input'>, 'type' | 'children'> & {
-  /** Fixed Figma preview. Omit for normal checked/defaultChecked interactions. */
-  state?: CheckboxState
   labelText?: string
   descriptionText?: string
   errorText?: string
@@ -22,7 +15,6 @@ export type CheckboxProps = Omit<ComponentPropsWithRef<'input'>, 'type' | 'child
 }
 
 export function Checkbox({
-  state,
   labelText = 'Label',
   descriptionText = 'Helper text',
   errorText = 'Error message',
@@ -45,8 +37,6 @@ export function Checkbox({
 }: CheckboxProps) {
   const generatedId = useId()
   const inputId = id ?? generatedId
-  const isDisabled = disabled || state === 'disabled' || state === 'disabled-selected'
-  const isInvalid = invalid || state === 'error'
   const descriptionIds = [
     describedBy,
     showDescription && `${inputId}-description`,
@@ -56,8 +46,7 @@ export function Checkbox({
   return (
     <label
       className={['fretara-checkbox', className].filter(Boolean).join(' ')}
-      data-state={state}
-      data-disabled={isDisabled || undefined}
+      data-disabled={disabled || undefined}
       htmlFor={inputId}
     >
       <input
@@ -65,13 +54,13 @@ export function Checkbox({
         id={inputId}
         className="fretara-checkbox__control"
         type="checkbox"
-        checked={state ? state.includes('selected') : checked}
-        defaultChecked={state ? undefined : defaultChecked}
-        readOnly={state ? true : readOnly}
-        disabled={isDisabled}
+        checked={checked}
+        defaultChecked={defaultChecked}
+        readOnly={readOnly}
+        disabled={disabled}
         required={required}
-        aria-label={ariaLabel ?? labelText}
-        aria-invalid={isInvalid ? true : ariaInvalid}
+        aria-label={ariaLabel ?? (showLabel ? undefined : labelText)}
+        aria-invalid={invalid ? true : ariaInvalid}
         aria-describedby={descriptionIds}
       />
       {(showLabel || showDescription || showErrorMessage) && (

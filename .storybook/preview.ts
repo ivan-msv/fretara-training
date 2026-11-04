@@ -3,6 +3,6 @@ import '../src/styles/tokens.css'
 import '../src/styles/typography.css'
 import './preview.css'
 
-const preview: Preview = {}
+const preview: Preview = { tags: ['autodocs'] }
 
 export default preview

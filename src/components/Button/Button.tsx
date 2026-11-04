@@ -6,6 +6,7 @@ import './Button.css'
 export type ButtonProps = {
   variant?: 'primary' | 'secondary' | 'tertiary' | 'link'
   shape?: 'rounded' | 'pill'
+  /** Icon-only buttons MUST have an aria-label describing their action. */
   leadingIcon?: ReactNode
   trailingIcon?: ReactNode
 } & ButtonHTMLAttributes<HTMLButtonElement>

@@ -1,5 +1,5 @@
 .fretara-sidebar {
-  --sidebar-active-accent: #0057ff;
+  --sidebar-active-accent: var(--blue);
 
   box-sizing: border-box;
   display: flex;

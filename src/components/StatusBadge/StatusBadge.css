@@ -43,9 +43,9 @@
 
 /* These Figma values differ from the Colors foundation's --blue swatch. */
 .fretara-status-badge--blue {
-  --status-background: #d7ebff;
-  --status-border: #cadaf9;
-  --status-foreground: #0057ff;
+  --status-background: var(--blue-surface);
+  --status-border: var(--blue-border);
+  --status-foreground: var(--blue);
 }
 
 .fretara-status-badge--disabled {

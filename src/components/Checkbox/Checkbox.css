@@ -30,13 +30,11 @@
   cursor: inherit;
 }
 
-.fretara-checkbox:hover .fretara-checkbox__control:enabled,
-.fretara-checkbox[data-state='hover'] .fretara-checkbox__control {
+.fretara-checkbox:hover .fretara-checkbox__control:enabled {
   border-color: var(--gray-400);
 }
 
-.fretara-checkbox:active .fretara-checkbox__control:enabled,
-.fretara-checkbox[data-state='pressed'] .fretara-checkbox__control {
+.fretara-checkbox:active .fretara-checkbox__control:enabled {
   border-color: var(--gray-400);
   background-color: var(--gray-50);
 }
@@ -46,13 +44,11 @@
   background-image: url('./assets/selected.svg');
 }
 
-.fretara-checkbox:hover .fretara-checkbox__control:enabled:checked,
-.fretara-checkbox[data-state='selected-hover'] .fretara-checkbox__control {
+.fretara-checkbox:hover .fretara-checkbox__control:enabled:checked {
   background-image: url('./assets/selected-hover.svg');
 }
 
-.fretara-checkbox:active .fretara-checkbox__control:enabled:checked,
-.fretara-checkbox[data-state='selected-pressed'] .fretara-checkbox__control {
+.fretara-checkbox:active .fretara-checkbox__control:enabled:checked {
   background-image: url('./assets/selected-pressed.svg');
 }
 
