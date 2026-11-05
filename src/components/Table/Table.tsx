@@ -50,6 +50,7 @@ export type DataTableProps<T> = Omit<ComponentPropsWithRef<'table'>, 'children'>
   columns: readonly TableColumn<T>[]
   rows: readonly T[]
   getRowId: (row: T) => string
+  getRowHref?: (row: T) => string | undefined
   /** Accessible name for the table and its horizontal scroll region. */
   label: string
   density?: TableDensity
@@ -65,7 +66,7 @@ export type DataTableProps<T> = Omit<ComponentPropsWithRef<'table'>, 'children'>
 }
 
 /** Rendering only: callers own filtering, sorting and pagination, including remote data. */
-export function DataTable<T>({ columns, rows, getRowId, label, density, toolbar, footer, sort, onSortChange, selection, isRowDisabled, loading = false, loadingRows = 5, emptyState, ...props }: DataTableProps<T>) {
+export function DataTable<T>({ columns, rows, getRowId, getRowHref, label, density, toolbar, footer, sort, onSortChange, selection, isRowDisabled, loading = false, loadingRows = 5, emptyState, ...props }: DataTableProps<T>) {
   const selectableIds = selection ? rows.filter(row => !isRowDisabled?.(row)).map(getRowId) : []
   const selectedCount = selection ? selectableIds.reduce((count, id) => count + Number(selection.selectedIds.has(id)), 0) : 0
   const allSelected = selectableIds.length > 0 && selectedCount === selectableIds.length
@@ -90,7 +91,8 @@ export function DataTable<T>({ columns, rows, getRowId, label, density, toolbar,
         <tbody>{loading ? Array.from({ length: Number.isFinite(loadingRows) ? Math.max(1, Math.floor(loadingRows)) : 5 }, (_, index) => <TableRow key={index} aria-hidden="true">{selection && <TableCell />}{columns.map(column => <TableCell key={column.id}><TableSkeleton /></TableCell>)}</TableRow>) : rows.length ? rows.map(row => {
           const id = getRowId(row)
           const disabled = isRowDisabled?.(row) ?? false
-          return <TableRow key={id} selected={selection?.selectedIds.has(id)} disabled={disabled}>{selection && <TableCell className="fretara-table__selection"><Checkbox showLabel={false} aria-label={`Select ${selection.getLabel(row)}`} disabled={disabled} checked={selection.selectedIds.has(id)} onChange={() => toggle(id)} /></TableCell>}{columns.map(column => <TableCell key={column.id} align={column.align}>{column.cell(row, { disabled })}</TableCell>)}</TableRow>
+          const href = getRowHref?.(row)
+          return <TableRow key={id} selected={selection?.selectedIds.has(id)} disabled={disabled} data-href={href} onClick={href && !disabled ? event => { if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey || (event.target as HTMLElement).closest('a, button, input, select, textarea, [role="button"]')) return; window.location.href = href } : undefined}>{selection && <TableCell className="fretara-table__selection"><Checkbox showLabel={false} aria-label={`Select ${selection.getLabel(row)}`} disabled={disabled} checked={selection.selectedIds.has(id)} onChange={() => toggle(id)} /></TableCell>}{columns.map(column => <TableCell key={column.id} align={column.align}>{column.cell(row, { disabled })}</TableCell>)}</TableRow>
         }) : <tr><td colSpan={Math.max(1, columnCount)} className="fretara-table__state">{emptyState ?? <TableEmptyState />}</td></tr>}</tbody>
       </Table>
     </div>

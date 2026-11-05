@@ -30,6 +30,7 @@
 .fretara-table[data-density='comfortable'] .fretara-table__cell { padding: 14px 12px; height: 73px; }
 .fretara-table__row:last-child .fretara-table__cell { border-bottom: 0; }
 .fretara-table__row:hover:not([aria-disabled='true']) { background: var(--gray-50); }
+.fretara-table__row[data-href] { cursor: pointer; }
 .fretara-table__row[aria-selected='true'], .fretara-table__row[aria-selected='true']:hover { background: var(--primary-00); }
 .fretara-table__row[aria-disabled='true'] { opacity: .5; }
 .fretara-table .fretara-table__selection { padding-inline: 20px 12px; }

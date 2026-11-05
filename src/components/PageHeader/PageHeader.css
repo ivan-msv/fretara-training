@@ -40,6 +40,8 @@
 
 .fretara-page-header__summary { min-width: 0; }
 .fretara-page-header__title-row { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; min-width: 0; }
+.fretara-page-header__title-icon { display: inline-flex; width: 20px; height: 20px; margin-right: -6px; }
+.fretara-page-header__title-icon svg { width: 20px; height: 20px; }
 .fretara-page-header__title { margin: 0; color: var(--black); overflow-wrap: anywhere; }
 .fretara-page-header__description { max-width: 75ch; margin: 4px 0 0; color: var(--gray-500); overflow-wrap: anywhere; }
 .fretara-page-header__actions,

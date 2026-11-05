@@ -1,22 +1,15 @@
-import { Button } from './components/Button'
-import './styles/tokens.css'
-import './styles/typography.css'
-import './App.css'
+import { EnquiriesPage } from './pages/EnquiriesPage'
+import { EnquiryDetailsPage } from './pages/EnquiryDetailsPage'
+import { records } from './pages/enquiriesData'
+import { QuotationDetailsPage } from './pages/QuotationDetailsPage'
+import type { QuotationState } from './pages/quotationData'
 
 function App() {
-  return (
-    <main className="library-home">
-      <h1 className="heading-24-bold">Fretara component library</h1>
-      <p className="body-14-medium">Explore component variants, controls, documentation, and accessibility checks in Storybook.</p>
-      <a className="body-14-medium" href="https://ivan-msv.github.io/fretara-training/">Open Storybook</a>
-      <section aria-label="Button variants" className="library-home__buttons">
-        <Button>Primary</Button>
-        <Button variant="secondary">Secondary</Button>
-        <Button variant="tertiary">Tertiary</Button>
-        <Button variant="link">Link</Button>
-      </section>
-    </main>
-  )
+  const quotationMatch = window.location.pathname.match(/^\/quotations\/(single|multi|partial)\/?$/)
+  if (quotationMatch) return <QuotationDetailsPage state={quotationMatch[1] as QuotationState} />
+  const match = window.location.pathname.match(/^\/enquiries\/([^/]+)\/?$/)
+  const record = match && records.find(item => item.id === decodeURIComponent(match[1]))
+  return record ? <EnquiryDetailsPage record={record} /> : <EnquiriesPage />
 }
 
 export default App

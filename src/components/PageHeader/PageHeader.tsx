@@ -8,11 +8,12 @@ import './PageHeader.css'
 
 export type PageHeaderProps = {
   title: string
-  description?: string
+  titleIcon?: ReactNode
+  description?: ReactNode
   badge?: ReactNode
   status?: ReactNode
   onBack?: () => void
-  primaryAction?: { label: string; onClick: () => void }
+  primaryAction?: { label: string; onClick: () => void; leadingIcon?: ReactNode }
   secondaryAction?: { label: string; onClick: () => void }
   onMore?: () => void
   showBackButton?: boolean
@@ -26,6 +27,7 @@ export type PageHeaderProps = {
 
 export function PageHeader({
   title,
+  titleIcon,
   description,
   badge,
   status,
@@ -59,6 +61,7 @@ export function PageHeader({
       <div className="fretara-page-header__content">
         <div className="fretara-page-header__summary">
           <div className="fretara-page-header__title-row">
+            {titleIcon && <span className="fretara-page-header__title-icon" aria-hidden="true">{titleIcon}</span>}
             <h1 className="fretara-page-header__title heading-24-bold">{title}</h1>
             {showBadge && badge}
             {showStatus && status}
@@ -70,7 +73,7 @@ export function PageHeader({
             {hasTextActions && (
               <div className="fretara-page-header__buttons">
                 {hasSecondaryButton && <Button type="button" variant="secondary" onClick={secondaryAction.onClick}>{secondaryAction.label}</Button>}
-                {hasPrimaryButton && <Button type="button" onClick={primaryAction.onClick}>{primaryAction.label}</Button>}
+                {hasPrimaryButton && <Button type="button" leadingIcon={primaryAction.leadingIcon} onClick={primaryAction.onClick}>{primaryAction.label}</Button>}
               </div>
             )}
             {hasIconActions && (
