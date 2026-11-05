@@ -32,9 +32,9 @@ const quotationRows: QuotationRow[] = records.flatMap(record => {
   return options.length === 1 ? [{ record, option: options[0], options, group: false }] : [{ record, options, group: true }, ...options.map(option => ({ record, option, options, group: false }))]
 })
 
-export function EnquiriesPage() {
+export function EnquiriesPage({ initialTab = 'enquiries' }: { initialTab?: 'enquiries' | 'quotations' }) {
   const [collapsed, setCollapsed] = useState(false)
-  const [activeTab, setActiveTab] = useState('enquiries')
+  const [activeTab, setActiveTab] = useState(initialTab)
   const [search, setSearch] = useState('')
   const [status, setStatus] = useState('all')
   const [activeStatus, setActiveStatus] = useState<string | null>(null)
@@ -68,7 +68,7 @@ export function EnquiriesPage() {
     { id: 'job', header: 'Job reference', width: '16%', cell: (row: QuotationRow) => row.group ? '—' : row.record.jobReference },
     { id: 'actions', header: '', width: 52, cell: (row: QuotationRow) => row.group ? null : actions(`quote-${row.option?.id}`, row.option?.quotationReference ?? '', row.record.name, row.record, row.option) },
   ]
-  const changeTab = (value: string) => { setActiveTab(value); setActiveStatus(null); setStatus('all'); setSearch(''); setOpenAction(null) }
+  const changeTab = (value: string) => { if (value !== 'enquiries' && value !== 'quotations') return; setActiveTab(value); setActiveStatus(null); setStatus('all'); setSearch(''); setOpenAction(null) }
   const toolbar = <TableToolbar navigation={<Tabs label="Quotation sections" value={activeTab} onValueChange={changeTab} items={[{ value: 'enquiries', label: 'Enquiries' }, { value: 'quotations', label: 'Quotations' }]} />} search={{ value: search, onChange: event => setSearch(event.target.value), placeholder: 'Search...' }} filters={activeTab === 'enquiries' ? <Dropdown aria-label="Filter by status" options={[{ value: 'all', label: 'All Status' }, { value: 'review', label: 'Manual review needed' }, { value: 'ready', label: 'Ready to send' }]} value={status} onValueChange={setStatus} leadingIcon={<FilterIcon width={20} height={20} />} /> : undefined} />
   const filters = activeTab === 'enquiries' ? [{ value: 'review', label: 'Manual review needed', tone: 'warning' }, { value: 'ready', label: 'Ready to send', tone: 'success' }] : [{ value: 'draft', label: 'Review draft', tone: 'blue' }, { value: 'followup', label: 'Review follow-up', tone: 'blue' }]
   const countFor = (value: string) => activeTab === 'enquiries' ? enquiryRows.filter(row => row.record.enquiryStatus === value).length : value === 'draft' ? quotationRows.filter(row => row.option?.quotationStatus === 'Draft').length : quotationRows.filter(row => row.option?.quotationStatus !== 'Draft' && !row.group).length
