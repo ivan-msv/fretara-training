@@ -19,6 +19,9 @@
 .enquiry-details__overview strong { font-size: var(--font-size-16); }
 .enquiry-details__overview span { color: var(--gray-400); font-size: var(--font-size-14); }
 .enquiry-details__option { display: flex; flex-direction: column; gap: 16px; padding: 16px; border: 1px solid var(--gray-100); border-radius: var(--radius-default); background: var(--white); }
+.enquiry-details__option-panel { overflow: hidden; border: 1px solid var(--gray-100); border-radius: var(--radius-default); background: var(--white); }
+.enquiry-details__option-panel-body { padding: 16px; }
+.enquiry-details__option-panel-body .enquiry-details__option { padding: 0; border: 0; }
 .enquiry-details__option-heading { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding-bottom: 8px; border-bottom: 1px solid var(--gray-100); }
 .enquiry-details__option-heading > div { display: flex; flex-direction: column; gap: 2px; margin-right: auto; }
 .enquiry-details__option-heading h3 { margin: 0; }
@@ -71,6 +74,16 @@
 .enquiry-details__surcharge { display: flex; justify-content: flex-end; padding: 8px 16px 0; }
 .enquiry-details__surcharge button { display: inline-flex; align-items: center; gap: 4px; padding: 8px; border: 1px solid var(--primary-300); border-radius: var(--radius-default); background: var(--white); color: var(--primary-300); font: inherit; cursor: pointer; }
 .enquiry-details__surcharge button:hover { background: var(--primary-00); }
+.enquiry-details__charge-picker { margin: 8px 16px 16px; padding: 16px; border: 1px solid var(--gray-100); border-radius: var(--radius-default); background: var(--gray-50); }
+.enquiry-details__charge-picker > .fretara-button { border-style: dashed; }
+.enquiry-details__charge-group { padding-top: 12px; }
+.enquiry-details__charge-group + .enquiry-details__charge-group { margin-top: 12px; border-top: 1px solid var(--gray-100); }
+.enquiry-details__charge-group h5 { margin: 0 0 10px; font-size: var(--font-size-14); }
+.enquiry-details__charge-group > div { display: flex; flex-wrap: wrap; gap: 8px; }
+.enquiry-details__charge-group button { padding: 6px 12px; border: 1px solid var(--gray-200); border-radius: var(--radius-full); background: var(--white); color: var(--gray-700); font: inherit; cursor: pointer; }
+.enquiry-details__charge-group button:hover, .enquiry-details__charge-group button[aria-pressed='true'] { border-color: var(--primary-300); background: var(--primary-00); color: var(--primary-300); }
+.enquiry-details__charge-group button:focus-visible { outline: 2px solid var(--primary-300); outline-offset: 2px; }
+.enquiry-details__charge-group button span { margin-left: 6px; color: var(--gray-400); }
 .enquiry-details__totals { display: grid; grid-template-columns: 1fr auto; gap: 8px; margin: 12px 16px 16px; padding: 16px; border: 1px solid var(--gray-100); border-radius: var(--radius-default); background: var(--gray-50); }
 .enquiry-details__totals strong { text-align: right; }
 .enquiry-details__grand-total { padding-top: 16px; border-top: 1px solid var(--gray-100); color: var(--primary-300); font-size: var(--font-size-24); }

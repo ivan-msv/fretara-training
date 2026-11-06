@@ -18,7 +18,7 @@ const navigation = [
 
 function OptionTabs({ options, activeId, onChange, onAdd }: { options: QuotationOption[]; activeId: string; onChange: (id: string) => void; onAdd: () => void }) {
   return <div className="quotation-details__tabs" role="tablist" aria-label="Quotation options">
-    <div className="quotation-details__tab-list">{options.map(option => <button key={option.id} role="tab" type="button" aria-selected={option.id === activeId} disabled={option.deleted} onClick={() => onChange(option.id)}><span>{option.label}{option.id === activeId && !option.deleted ? ' ···' : ''}</span><small>{option.deleted ? 'Deleted' : option.description}</small></button>)}</div>
+    <div className="quotation-details__tab-list">{options.map((option, index) => <button key={option.id} role="tab" type="button" aria-selected={option.id === activeId} disabled={option.deleted} onClick={() => onChange(option.id)}><span>Option {index + 1}{option.id === activeId && !option.deleted ? ' ···' : ''}</span><small>{option.deleted ? 'Deleted' : option.description}</small></button>)}</div>
     <Button type="button" variant="link" leadingIcon={<PlusIcon />} onClick={onAdd}>Add new option</Button>
   </div>
 }
