@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import type { ButtonHTMLAttributes, HTMLAttributes, ReactNode } from 'react'
-import { CheckmarkCircleFillIcon } from '../../icons/fill'
+import { CheckmarkCircleFillIcon } from '../../icons/fill/CheckmarkCircleFillIcon'
 import { InfoCircleIcon, LinkIcon, WarningErrorIcon, XmarkCloseIcon } from '../../icons/line'
 import '../../styles/tokens.css'
 import '../../styles/typography.css'

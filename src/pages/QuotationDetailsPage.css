@@ -4,7 +4,10 @@
 .quotation-details { display: flex; min-height: 100vh; background: var(--gray-50); color: var(--gray-700); font-family: var(--font-family-primary); }
 .quotation-details > .fretara-sidebar { height: auto; min-height: 100vh; }
 .quotation-details__main { flex: 1; min-width: 0; }
-.quotation-details__regular-header { padding: 20px 24px 16px; }
+.quotation-details__regular-header { position: relative; padding: 20px 24px 16px; }
+.quotation-details__more-menu { position: absolute; z-index: 6; top: calc(100% - 10px); right: 24px; display: flex; flex-direction: column; min-width: 180px; padding: 4px; border: 1px solid var(--gray-100); border-radius: var(--radius-default); background: var(--white); box-shadow: var(--shadow-popover); }
+.quotation-details__more-menu button { padding: 9px 10px; border: 0; border-radius: var(--radius-md); background: transparent; color: var(--gray-700); font: inherit; text-align: left; cursor: pointer; }
+.quotation-details__more-menu button:hover, .quotation-details__more-menu button:focus-visible { background: var(--gray-50); outline: none; }
 .quotation-details__content { display: flex; flex-direction: column; gap: 16px; padding: 0 24px 72px; }
 .quotation-details__quote { overflow: hidden; border: 1px solid var(--blue-border); border-radius: var(--radius-default); background: linear-gradient(110deg, var(--blue-surface), var(--light-blue) 55%, var(--primary-00)); }
 .quotation-details__quote[data-open-enquiry='true'] { border-color: var(--gray-100); background: var(--white); }
@@ -27,13 +30,13 @@
 .quotation-details__tab-list small { font-size: var(--font-size-14); line-height: var(--line-height-20); white-space: nowrap; }
 .quotation-details__tab-list button:disabled small { padding: 1px 7px; border-radius: var(--radius-full); background: var(--gray-100); font-size: var(--font-size-12); line-height: var(--line-height-18); }
 .quotation-details__tabs > .fretara-button { flex: none; margin-top: 7px; }
-.quotation-details__sticky { position: fixed; top: 0; right: 0; left: var(--sidebar-expanded-width, 260px); z-index: 10; display: none; background: var(--white); box-shadow: 0 3px 8px #00000014; }
+.quotation-details__sticky { position: fixed; top: 0; right: 0; left: var(--sidebar-expanded-width, 260px); z-index: 10; display: none; background: var(--white); box-shadow: var(--shadow-sticky); }
 .quotation-details__sticky[data-visible='true'] { display: block; }
 .quotation-details:has(.fretara-sidebar[data-collapsed]) .quotation-details__sticky { left: 68px; }
 .quotation-details__sticky .quotation-details__tabs { background: var(--white); }
 .quotation-details__sticky-heading { display: flex; align-items: center; justify-content: space-between; min-height: 64px; padding: 0 24px; }
 .quotation-details__sticky-heading svg { width: 20px; height: 20px; color: var(--blue); }
 .quotation-details__sticky[data-open-enquiry='true'] .quotation-details__sticky-heading svg { color: var(--black); }
-.quotation-details__notice { position: fixed; right: 24px; bottom: 24px; z-index: 20; margin: 0; padding: 10px 14px; border: 1px solid var(--gray-100); border-radius: var(--radius-default); background: var(--white); box-shadow: 0 8px 24px #0002; }
+.quotation-details__notice { position: fixed; right: 24px; bottom: 24px; z-index: 20; margin: 0; padding: 10px 14px; border: 1px solid var(--gray-100); border-radius: var(--radius-default); background: var(--white); box-shadow: var(--shadow-floating); }
 @media (max-width: 900px) { .quotation-details__tabs { align-items: stretch; flex-direction: column; padding-bottom: 8px; } .quotation-details__tabs > .fretara-button { align-self: flex-end; } .quotation-details__sticky-heading { min-height: 60px; } }
-@media (max-width: 700px) { .quotation-details > .fretara-sidebar { display: none; } .quotation-details__regular-header, .quotation-details__content { padding-inline: 16px; } .quotation-details__sticky { left: 0; } .quotation-details__tab-list > button { min-width: 128px; } }
+@media (max-width: 700px) { .quotation-details { flex-direction: column; } .quotation-details > .fretara-sidebar { min-height: 0; } .quotation-details__regular-header, .quotation-details__content { padding-inline: 16px; } .quotation-details__sticky { left: 0; } .quotation-details__tab-list > button { min-width: 128px; } }

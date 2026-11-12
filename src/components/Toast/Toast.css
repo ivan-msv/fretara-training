@@ -10,7 +10,7 @@
   border: 0;
   border-radius: var(--radius-default);
   background: var(--toast-background);
-  box-shadow: 0 3px 6px rgb(0 0 0 / 12%);
+  box-shadow: var(--shadow-popover);
   box-sizing: border-box;
   color: var(--black);
 }
@@ -101,7 +101,7 @@
   border: 0;
   border-radius: var(--radius-sm);
   background: transparent;
-  color: var(--gray-400);
+  color: var(--gray-500);
   cursor: pointer;
 }
 

@@ -56,14 +56,14 @@
 }
 
 .fretara-input__control::placeholder {
-  color: var(--gray-300);
+  color: var(--gray-500);
   opacity: 1;
 }
 
 .fretara-input__unit,
 .fretara-input__icon {
   flex-shrink: 0;
-  color: var(--gray-300);
+  color: var(--gray-500);
 }
 
 .fretara-input__unit {
@@ -117,7 +117,7 @@
 .fretara-input:has(input:disabled) .fretara-input__label,
 .fretara-input__control:disabled,
 .fretara-input__control:disabled::placeholder {
-  color: var(--gray-400);
+  color: var(--gray-500);
   opacity: 1;
 }
 

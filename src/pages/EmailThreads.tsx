@@ -1,7 +1,20 @@
 import { useRef, useState } from 'react'
 import { Button } from '../components/Button'
 import { StatusBadge } from '../components/StatusBadge'
-import { AttachIcon, BulletedListIcon, ChevronDownIcon, ChevronUpIcon, ClockDashIcon, DeleteIcon, EditIcon, EmailIcon, LinkIcon, PlusIcon, SendMessageUpRightIcon, XmarkCloseIcon } from '../icons'
+import { AttachIcon } from '../icons/line/AttachIcon'
+import { BulletedListIcon } from '../icons/line/BulletedListIcon'
+import { CheckmarkIcon } from '../icons/line/CheckmarkIcon'
+import { ChevronDownIcon } from '../icons/line/ChevronDownIcon'
+import { ChevronUpIcon } from '../icons/line/ChevronUpIcon'
+import { ClockDashIcon } from '../icons/line/ClockDashIcon'
+import { DeleteIcon } from '../icons/line/DeleteIcon'
+import { EditIcon } from '../icons/line/EditIcon'
+import { EmailIcon } from '../icons/line/EmailIcon'
+import { LinkIcon } from '../icons/line/LinkIcon'
+import { PlusIcon } from '../icons/line/PlusIcon'
+import { SendMessageUpRightIcon } from '../icons/line/SendMessageUpRightIcon'
+import { WarningErrorIcon } from '../icons/line/WarningErrorIcon'
+import { XmarkCloseIcon } from '../icons/line/XmarkCloseIcon'
 import fretaraMark from '../components/Sidebar/assets/fretara-mark.svg'
 import type { EnquiryRecord } from './enquiriesData'
 import './EmailThreads.css'
@@ -23,6 +36,7 @@ export function EmailThreads({ record, initialState = 'draft', initiallyOpen = f
   const [extraRecipient, setExtraRecipient] = useState('')
   const [sentBodies, setSentBodies] = useState<string[]>([])
   const [notice, setNotice] = useState('')
+  const [reviewOpen, setReviewOpen] = useState(true)
   const editor = useRef<HTMLTextAreaElement>(null)
   const attachment = useRef<HTMLInputElement>(null)
   const hasDraft = state === 'draft' || state === 'editing'
@@ -55,6 +69,25 @@ export function EmailThreads({ record, initialState = 'draft', initiallyOpen = f
   return <section className="email-threads">
     <button className="email-threads__toggle" type="button" aria-expanded={open} onClick={() => setOpen(!open)}><span className="heading-18-bold">EMAIL THREADS</span><span className="email-threads__count body-14-medium">{messageCount} messages {open ? <ChevronUpIcon width={20} height={20} /> : <ChevronDownIcon width={20} height={20} />}</span></button>
     {open && <div className="email-threads__content">
+      <section className="email-threads__review" aria-labelledby="manual-review-title">
+        <button className="email-threads__review-heading" type="button" aria-expanded={reviewOpen} aria-controls="manual-review-items" onClick={() => setReviewOpen(value => !value)}>
+          <WarningErrorIcon width={16} height={16} aria-hidden="true" />
+          <span id="manual-review-title">Manual review required</span>
+          {reviewOpen ? <ChevronUpIcon width={16} height={16} aria-hidden="true" /> : <ChevronDownIcon width={16} height={16} aria-hidden="true" />}
+        </button>
+        {reviewOpen && <ul className="body-12-medium" id="manual-review-items">
+          <li>Missing required fields</li>
+          <li>Return shipment detected</li>
+          <li>Missing attachment</li>
+          <li>Multi-leg shipment</li>
+          <li>Change request received for an already-created quote</li>
+        </ul>}
+      </section>
+      <section className="email-threads__changes" aria-labelledby="requested-changes-title">
+        <h3 id="requested-changes-title" className="heading-14-bold"><WarningErrorIcon width={16} height={16} aria-hidden="true" />Requested changes</h3>
+        <div className="email-threads__change-row body-12-medium"><span>Option 1</span><strong>Delivery date</strong><span>12 Oct 2026 <span aria-hidden="true">→</span> <b>14 Oct 2026</b></span><div><Button type="button" variant="secondary" leadingIcon={<CheckmarkIcon />} onClick={() => setNotice('Delivery date change approved.')}>Approve</Button><Button type="button" variant="secondary" leadingIcon={<XmarkCloseIcon />} onClick={() => setNotice('Delivery date change rejected.')}>Reject</Button></div></div>
+        <div className="email-threads__change-row body-12-medium"><span>Option 2</span><strong>Weight</strong><span>1,200 kg <span aria-hidden="true">→</span> <b>1,450 kg</b></span><div><Button type="button" variant="secondary" leadingIcon={<CheckmarkIcon />} onClick={() => setNotice('Weight change approved.')}>Approve</Button><Button type="button" variant="secondary" leadingIcon={<XmarkCloseIcon />} onClick={() => setNotice('Weight change rejected.')}>Reject</Button></div></div>
+      </section>
       <div className="email-threads__subject"><strong className="heading-18-bold">Request for Pallet Shipping Quote – Melbourne</strong><div className="email-threads__recipients body-14-medium"><span>To:</span>{recipient && <span className="email-threads__recipient"><b>J</b>{record.name}<button type="button" aria-label={`Remove ${record.name} as recipient`} onClick={() => setRecipient(false)}><XmarkCloseIcon width={12} height={12} /></button></span>}{extraRecipient && <span className="email-threads__recipient">{extraRecipient}<button type="button" aria-label={`Remove ${extraRecipient} as recipient`} onClick={() => setExtraRecipient('')}><XmarkCloseIcon width={12} height={12} /></button></span>}{addingRecipient ? <input autoFocus aria-label="Additional recipient email" type="email" placeholder="Email address" onKeyDown={event => { if (event.key === 'Enter') { setExtraRecipient(event.currentTarget.value); setAddingRecipient(false) } if (event.key === 'Escape') setAddingRecipient(false) }} onBlur={event => { if (event.target.value) setExtraRecipient(event.target.value); setAddingRecipient(false) }} /> : <button className="email-threads__add-recipient" type="button" aria-label="Add recipient" onClick={() => setAddingRecipient(true)}><PlusIcon width={18} height={18} /></button>}</div></div>
       <div className="email-threads__messages">
         <article className="email-threads__message"><header className="email-threads__message-header"><span className="email-threads__avatar email-threads__avatar--customer">J</span><strong className="heading-14-bold">{record.name}</strong><span className="body-12-medium email-threads__address">&lt;{record.id === 'jack' ? 'jack@gmail.com' : record.email}&gt;</span><time className="body-12-medium">19.10.2026 | 10:25 AM</time></header><div className="email-threads__message-body body-12-medium">Hi,<br />I’d like to request a quote for shipping a pallet from Sydney, Australia.<br />Here are the shipment details:<br />From: Melbourne, Australia<br />Shipment type: 1 standard pallet<br />Dimensions (approx): 120 cm (L) × 150 cm (H)<br />Contents: General commercial goods (non-hazardous)<br />Ready date: 28 May 2026</div></article>

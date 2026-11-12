@@ -37,7 +37,7 @@
   border: 0;
   border-radius: var(--radius-default);
   background: transparent;
-  color: var(--gray-400);
+  color: var(--gray-500);
   cursor: pointer;
 }
 
@@ -86,4 +86,8 @@
     white-space: nowrap;
     border: 0;
   }
+}
+
+@media (pointer: coarse) {
+  .fretara-navbar__logout { min-width: 44px; min-height: 44px; }
 }

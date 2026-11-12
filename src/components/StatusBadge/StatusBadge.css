@@ -51,7 +51,7 @@
 .fretara-status-badge--disabled {
   --status-background: var(--gray-100);
   --status-border: transparent;
-  --status-foreground: var(--gray-400);
+  --status-foreground: var(--gray-500);
 }
 
 .fretara-status-badge__dot,

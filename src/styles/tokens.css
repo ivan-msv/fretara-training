@@ -133,4 +133,9 @@
   --radius-xl: 16px;
   --radius-2xl: 24px;
   --radius-full: 100px;
+
+  /* Elevation */
+  --shadow-popover: 0 4px 12px color-mix(in srgb, var(--black) 8%, transparent);
+  --shadow-floating: 0 8px 24px color-mix(in srgb, var(--black) 12%, transparent);
+  --shadow-sticky: 0 3px 8px color-mix(in srgb, var(--black) 8%, transparent);
 }

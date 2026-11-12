@@ -9,30 +9,22 @@
 .enquiry-details__sticky[data-scrolled='true'] .fretara-page-header__back { display: none; }
 .enquiry-details__sticky .fretara-page-header__title { font-size: var(--font-size-24); }
 .enquiry-details__sticky .fretara-page-header__description { display: flex; align-items: center; gap: 6px; }
-.enquiry-details__more-menu { position: absolute; right: 24px; top: 100%; z-index: 6; padding: 4px; border: 1px solid var(--gray-100); border-radius: var(--radius-default); background: var(--white); box-shadow: 0 8px 20px #0002; }
+.enquiry-details__more-menu { position: absolute; right: 24px; top: 100%; z-index: 6; padding: 4px; border: 1px solid var(--gray-100); border-radius: var(--radius-default); background: var(--white); box-shadow: var(--shadow-popover); }
 .enquiry-details__more-menu button { border: 0; padding: 8px 12px; background: transparent; font: inherit; cursor: pointer; }
+.enquiry-details__more-menu button:hover, .enquiry-details__more-menu button:focus-visible { background: var(--gray-50); outline: none; }
 .enquiry-details__content { display: flex; flex-direction: column; gap: 16px; padding: 0 24px 80px; }
-.enquiry-details__overview { display: grid; grid-template-columns: repeat(3, 1fr); padding: 16px; border: 1px solid var(--gray-100); border-radius: var(--radius-default); background: var(--white); }
-.enquiry-details__overview[hidden] { display: none; }
-.enquiry-details__overview > div { display: flex; flex-direction: column; gap: 4px; padding: 0 24px; border-right: 1px solid var(--gray-100); }
-.enquiry-details__overview > div:last-child { border-right: 0; }
-.enquiry-details__overview strong { font-size: var(--font-size-16); }
-.enquiry-details__overview span { color: var(--gray-400); font-size: var(--font-size-14); }
 .enquiry-details__option { display: flex; flex-direction: column; gap: 16px; padding: 16px; border: 1px solid var(--gray-100); border-radius: var(--radius-default); background: var(--white); }
 .enquiry-details__option-panel { overflow: hidden; border: 1px solid var(--gray-100); border-radius: var(--radius-default); background: var(--white); }
 .enquiry-details__option-panel-body { padding: 16px; }
 .enquiry-details__option-panel-body .enquiry-details__option { padding: 0; border: 0; }
-.enquiry-details__option-heading { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; padding-bottom: 8px; border-bottom: 1px solid var(--gray-100); }
-.enquiry-details__option-heading > div { display: flex; flex-direction: column; gap: 2px; margin-right: auto; }
-.enquiry-details__option-heading h3 { margin: 0; }
-.enquiry-details__option-heading .body-12-medium { color: var(--gray-400); }
 .enquiry-details__option-summary { display: flex; align-items: center; gap: 12px; padding: 8px 0 2px; }
 .enquiry-details__option-summary strong { font-size: var(--font-size-24); color: var(--black); }
+.enquiry-details__option-summary > .fretara-button { margin-left: auto; }
 .enquiry-details__dates { display: grid; grid-template-columns: 1fr 1fr; padding: 12px 16px; border: 1px solid var(--gray-100); border-radius: var(--radius-default); }
 .enquiry-details__dates[data-three-columns='true'] { grid-template-columns: 1fr 1fr 1fr; }
 .enquiry-details__dates > div { display: flex; flex-direction: column; gap: 4px; padding-inline: 32px; border-right: 1px solid var(--gray-100); }
 .enquiry-details__dates > div:last-child { border-right: 0; }
-.enquiry-details__dates span { color: var(--gray-400); font-size: var(--font-size-14); }
+.enquiry-details__dates span { color: var(--gray-500); font-size: var(--font-size-14); }
 .enquiry-details__status-select { display: inline-flex; align-items: center; justify-content: space-between; gap: 14px; align-self: flex-start; padding: 5px 8px; border: 1px solid var(--gray-100); border-radius: var(--radius-md); background: var(--gray-50); font-size: var(--font-size-14); }
 .enquiry-details__status-select::first-letter { color: var(--gray-300); }
 .enquiry-details__places { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
@@ -47,6 +39,10 @@
 .enquiry-details__card dd { min-width: 0; margin: 0; text-align: right; font-weight: var(--font-weight-bold); }
 .enquiry-details__card input, .enquiry-details__note textarea { box-sizing: border-box; max-width: 100%; padding: 4px 6px; border: 1px solid transparent; border-radius: var(--radius-sm); background: transparent; color: var(--gray-700); font: inherit; text-align: inherit; }
 .enquiry-details__card input:hover, .enquiry-details__card input:focus, .enquiry-details__note textarea:hover, .enquiry-details__note textarea:focus { border-color: var(--gray-200); outline-color: var(--primary-300); }
+.enquiry-details__card input[readonly], .enquiry-details__note textarea[readonly] { cursor: default; }
+.enquiry-details__card input[readonly]:hover, .enquiry-details__note textarea[readonly]:hover { border-color: transparent; }
+.enquiry-details__date-field { display: inline-flex; align-items: center; justify-content: flex-end; gap: 4px; }
+.enquiry-details__date-field svg { flex: none; color: var(--gray-500); }
 .enquiry-details__items { overflow-x: auto; padding: 0; }
 .enquiry-details__items .fretara-table { min-width: 700px; }
 .enquiry-details__items .fretara-table__cell { vertical-align: middle; }
@@ -57,6 +53,7 @@
 .enquiry-details__item-actions button:disabled { opacity: .4; cursor: not-allowed; }
 .enquiry-details__freight { display: grid; grid-template-columns: repeat(5, minmax(95px, 1fr)) auto; align-items: end; gap: 12px; margin: 8px 16px; padding: 16px; border: 1px solid var(--gray-100); border-radius: var(--radius-default); background: var(--gray-50); }
 .enquiry-details__freight .fretara-input { min-width: 0; }
+.enquiry-details__freight .fretara-dropdown { min-width: 0; width: auto; }
 .enquiry-details__freight > span { grid-column: 1 / -1; text-align: right; color: var(--gray-500); font-size: var(--font-size-14); }
 .enquiry-details__add-row { display: flex; justify-content: flex-end; padding: 12px 16px 16px; }
 .enquiry-details__add-row .fretara-button { background: var(--primary-50); border-color: var(--primary-50); color: var(--primary-300); }
@@ -83,7 +80,7 @@
 .enquiry-details__charge-group button { padding: 6px 12px; border: 1px solid var(--gray-200); border-radius: var(--radius-full); background: var(--white); color: var(--gray-700); font: inherit; cursor: pointer; }
 .enquiry-details__charge-group button:hover, .enquiry-details__charge-group button[aria-pressed='true'] { border-color: var(--primary-300); background: var(--primary-00); color: var(--primary-300); }
 .enquiry-details__charge-group button:focus-visible { outline: 2px solid var(--primary-300); outline-offset: 2px; }
-.enquiry-details__charge-group button span { margin-left: 6px; color: var(--gray-400); }
+.enquiry-details__charge-group button span { margin-left: 6px; color: var(--gray-500); }
 .enquiry-details__totals { display: grid; grid-template-columns: 1fr auto; gap: 8px; margin: 12px 16px 16px; padding: 16px; border: 1px solid var(--gray-100); border-radius: var(--radius-default); background: var(--gray-50); }
 .enquiry-details__totals strong { text-align: right; }
 .enquiry-details__grand-total { padding-top: 16px; border-top: 1px solid var(--gray-100); color: var(--primary-300); font-size: var(--font-size-24); }
@@ -91,7 +88,8 @@
 .enquiry-details__note { min-height: 96px; }
 .enquiry-details__note textarea { display: block; width: 100%; min-height: 32px; resize: vertical; text-align: left; }
 .enquiry-details__note > input { text-align: left; }
-.enquiry-details__note small { color: var(--gray-400); }
+.enquiry-details__note small { color: var(--gray-500); }
 .enquiry-details__notice { display: flex; align-items: center; gap: 6px; margin: 0; padding: 10px; color: var(--gray-600); }
 @media (max-width: 900px) { .enquiry-details__places { grid-template-columns: 1fr; } .enquiry-details__freight { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 700px) { .enquiry-details > .fretara-sidebar { display: none; } .enquiry-details__sticky, .enquiry-details__content { padding-inline: 16px; } .enquiry-details__overview { grid-template-columns: 1fr; gap: 12px; } .enquiry-details__overview > div { padding: 0; border-right: 0; } .enquiry-details__dates { grid-template-columns: 1fr; gap: 12px; } .enquiry-details__dates > div { padding: 0; border-right: 0; } .enquiry-details__freight { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 700px) { .enquiry-details { flex-direction: column; } .enquiry-details > .fretara-sidebar { min-height: 0; } .enquiry-details__sticky, .enquiry-details__content { padding-inline: 16px; } .enquiry-details__dates { grid-template-columns: 1fr; gap: 12px; } .enquiry-details__dates > div { padding: 0; border-right: 0; } .enquiry-details__freight { grid-template-columns: repeat(2, 1fr); } }
+@media (pointer: coarse) { .enquiry-details__card-heading button, .enquiry-details__item-actions button { min-width: 44px; min-height: 44px; } }

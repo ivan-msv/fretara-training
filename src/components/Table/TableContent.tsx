@@ -1,6 +1,6 @@
 import type { ComponentPropsWithRef, ReactNode } from 'react'
 import { MoreIcon, StarIcon, UserPersonrIcon } from '../../icons/line'
-import { StarFillIcon } from '../../icons/fill'
+import { StarFillIcon } from '../../icons/fill/StarFillIcon'
 import '../../styles/tokens.css'
 import './Table.css'
 

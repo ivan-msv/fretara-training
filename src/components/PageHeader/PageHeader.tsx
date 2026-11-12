@@ -1,4 +1,4 @@
-import type { HTMLAttributes, ReactNode } from 'react'
+import type { ButtonHTMLAttributes, HTMLAttributes, ReactNode } from 'react'
 import { ArrowLeftIcon } from '../../icons/line/ArrowLeftIcon'
 import { MoreIcon } from '../../icons/line/MoreIcon'
 import { Button } from '../Button/Button'
@@ -16,6 +16,7 @@ export type PageHeaderProps = {
   primaryAction?: { label: string; onClick: () => void; leadingIcon?: ReactNode }
   secondaryAction?: { label: string; onClick: () => void }
   onMore?: () => void
+  moreButtonProps?: Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'children' | 'onClick' | 'type'>
   showBackButton?: boolean
   showBadge?: boolean
   showStatus?: boolean
@@ -35,6 +36,7 @@ export function PageHeader({
   primaryAction,
   secondaryAction,
   onMore,
+  moreButtonProps,
   showBackButton = true,
   showBadge = true,
   showStatus = true,
@@ -77,7 +79,7 @@ export function PageHeader({
               </div>
             )}
             {hasIconActions && (
-              <button className="fretara-page-header__more" type="button" aria-label="More actions" onClick={onMore}>
+              <button {...moreButtonProps} className={['fretara-page-header__more', moreButtonProps?.className].filter(Boolean).join(' ')} type="button" aria-label={moreButtonProps?.['aria-label'] ?? 'More actions'} onClick={onMore}>
                 <MoreIcon aria-hidden="true" />
               </button>
             )}
