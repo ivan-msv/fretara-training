@@ -2,7 +2,6 @@
 @import '../styles/typography.css';
 
 .quotation-details { display: flex; min-height: 100vh; background: var(--gray-50); color: var(--gray-700); font-family: var(--font-family-primary); }
-.quotation-details > .fretara-sidebar { height: auto; min-height: 100vh; }
 .quotation-details__main { flex: 1; min-width: 0; }
 .quotation-details__regular-header { position: relative; padding: 20px 24px 16px; }
 .quotation-details__more-menu { position: absolute; z-index: 6; top: calc(100% - 10px); right: 24px; display: flex; flex-direction: column; min-width: 180px; padding: 4px; border: 1px solid var(--gray-100); border-radius: var(--radius-default); background: var(--white); box-shadow: var(--shadow-popover); }

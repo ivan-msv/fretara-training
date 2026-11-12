@@ -23,6 +23,12 @@
   --status-foreground: var(--success-500);
 }
 
+.fretara-status-badge--ready {
+  --status-background: var(--teal-50);
+  --status-border: var(--teal-200);
+  --status-foreground: var(--teal-500);
+}
+
 .fretara-status-badge--warning {
   --status-background: var(--warning-50);
   --status-border: var(--warning-100);

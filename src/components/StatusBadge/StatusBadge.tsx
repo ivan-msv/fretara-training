@@ -3,7 +3,7 @@ import '../../styles/tokens.css'
 import '../../styles/typography.css'
 import './StatusBadge.css'
 
-export type StatusBadgeStatus = 'default' | 'success' | 'warning' | 'error' | 'neutral' | 'blue' | 'disabled'
+export type StatusBadgeStatus = 'default' | 'success' | 'ready' | 'warning' | 'error' | 'neutral' | 'blue' | 'disabled'
 
 export type StatusBadgeProps = {
   type?: 'status' | 'badge'

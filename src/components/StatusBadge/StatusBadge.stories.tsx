@@ -5,7 +5,7 @@ import * as lineIcons from '../../icons/line'
 import * as fillIcons from '../../icons/fill'
 import './StatusBadge.stories.css'
 
-const statuses = ['default', 'success', 'warning', 'error', 'neutral', 'blue', 'disabled'] as const
+const statuses = ['default', 'success', 'ready', 'warning', 'error', 'neutral', 'blue', 'disabled'] as const
 const icons = { ...lineIcons, ...fillIcons }
 
 const meta = {

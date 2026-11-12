@@ -2,7 +2,6 @@
 @import '../styles/typography.css';
 
 .enquiries-page { display: flex; align-items: stretch; min-height: 100vh; background: var(--gray-50); font-family: var(--font-family-primary); }
-.enquiries-page > .fretara-sidebar { height: auto; min-height: 100vh; }
 .enquiries-page__main { min-width: 0; flex: 1; }
 .enquiries-page__content { display: flex; flex-direction: column; gap: 24px; padding: 24px; }
 .enquiries-page__insights { padding: 16px 12px 12px; border: 1px solid var(--gray-100); border-radius: var(--radius-default); background: var(--white); }
@@ -22,26 +21,30 @@
 .enquiries-page__table-shell .fretara-table__cell { vertical-align: middle; }
 .enquiries-page__table-shell .fretara-table__row:has(.enquiries-page__converted) { background: var(--light-blue); }
 .enquiries-page__table-shell .fretara-table__row:hover { background: var(--gray-50); }
-.enquiries-page__table-shell .fretara-table__header:last-child { text-align: center; }
+.enquiries-page__table-shell:not([data-view='enquiries']) .fretara-table__header:last-child { text-align: center; }
 .enquiries-page__table-shell .fretara-table-toolbar__options .fretara-dropdown { width: 150px; }
 .enquiries-page__table-shell .fretara-dropdown__trigger { padding-inline: 8px; }
-.enquiries-page__table-shell .fretara-table-toolbar__options:not(:has(.fretara-dropdown)) { flex: 1; }
-.enquiries-page__table-shell .fretara-table-toolbar__options:not(:has(.fretara-dropdown)) .fretara-table-toolbar__search { width: 100%; }
-.enquiries-page__status-filters { display: flex; gap: 8px; flex-wrap: wrap; padding: 8px 16px; border-bottom: 1px solid var(--gray-100); }
-.enquiries-page__status-filters button { display: flex; align-items: center; gap: 4px; padding: 4px 10px; border: 1px solid var(--gray-100); border-radius: var(--radius-full); background: var(--white); color: var(--black); font: inherit; font-size: var(--font-size-14); cursor: pointer; }
-.enquiries-page__status-filters button[aria-pressed='true'] { border-color: var(--primary-300); background: var(--primary-00); }
+.enquiries-page__status-filters { display: flex; gap: 8px; flex-wrap: wrap; padding: 12px 16px; border-bottom: 1px solid var(--gray-100); }
+.enquiries-page__status-filter.fretara-button { min-height: 36px; gap: 8px; padding: 7px 12px; border-color: var(--gray-100); background: var(--white); color: var(--gray-700); font-size: var(--font-size-14); font-weight: var(--font-weight-medium); }
+.enquiries-page__status-filter.fretara-button:hover:enabled { border-color: var(--gray-200); background: var(--gray-50); }
+.enquiries-page__status-filter.fretara-button[aria-pressed='true'] { border-color: var(--primary-300); background: var(--primary-00); color: var(--primary-300); }
+.enquiries-page__status-filter .fretara-button__label { display: contents; }
 .enquiries-page__dot { width: 8px; height: 8px; border-radius: var(--radius-full); background: var(--warning-400); }
-.enquiries-page__dot[data-tone='success'] { background: var(--success-400); }
-.enquiries-page__count { padding: 0 6px; border-radius: var(--radius-default); background: var(--gray-100); color: var(--gray-500); font-size: var(--font-size-12); }
+.enquiries-page__dot[data-tone='review'] { background: var(--warning-500); }
+.enquiries-page__dot[data-tone='followup'] { background: var(--warning-400); }
+.enquiries-page__dot[data-tone='ready'] { background: var(--success-500); }
+.enquiries-page__dot[data-tone='unsent'], .enquiries-page__dot[data-tone='blue'] { background: var(--blue); }
+.enquiries-page__count { padding: 1px 8px; border-radius: var(--radius-full); background: var(--gray-100); color: var(--gray-500); font-size: var(--font-size-12); font-weight: var(--font-weight-bold); }
 .enquiries-page__reference { color: var(--gray-500); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; }
-.enquiries-page__client-link { color: inherit; text-decoration: none; }
-.enquiries-page__client-link:hover { color: var(--primary-300); text-decoration: underline; }
+.enquiries-page__client-link { color: var(--primary-300); text-decoration: none; }
+.enquiries-page__client-link[data-muted] { color: inherit; }
+.enquiries-page__client-link:hover { color: var(--primary-400); text-decoration: underline; }
 .enquiries-page__reference small { display: block; color: var(--gray-500); font-size: var(--font-size-12); line-height: var(--line-height-18); }
 .enquiries-page__converted { color: var(--primary-300); }
 .enquiries-page__table-shell .fretara-table__row:has(.fretara-table-content__icon) .fretara-table__cell:first-child { padding-inline-start: 12px; }
-.enquiries-page__table-shell .fretara-table__row:has(.enquiries-page__quote-option) .fretara-table__cell { height: 62px; border-top: 1px solid var(--gray-100); border-bottom: 1px solid var(--gray-100); background: var(--gray-50); }
-.enquiries-page__table-shell .fretara-table__row:has(.enquiries-page__quote-option) .fretara-table__cell:first-child { border-left: 1px solid var(--gray-100); border-radius: var(--radius-default) 0 0 var(--radius-default); }
-.enquiries-page__table-shell .fretara-table__row:has(.enquiries-page__quote-option) .fretara-table__cell:last-child { border-right: 1px solid var(--gray-100); border-radius: 0 var(--radius-default) var(--radius-default) 0; }
+.enquiries-page__table-shell .fretara-table__row:has(.enquiries-page__quote-option) .fretara-table__cell { height: 64px; border-top: 2px solid var(--white); border-bottom: 2px solid var(--white); background: var(--gray-50); box-shadow: inset 0 1px var(--gray-100), inset 0 -1px var(--gray-100); }
+.enquiries-page__table-shell .fretara-table__row:has(.enquiries-page__quote-option) .fretara-table__cell:first-child { border-left: 16px solid var(--white); border-radius: var(--radius-default) 0 0 var(--radius-default); box-shadow: inset 1px 0 var(--gray-100), inset 0 1px var(--gray-100), inset 0 -1px var(--gray-100); }
+.enquiries-page__table-shell .fretara-table__row:has(.enquiries-page__quote-option) .fretara-table__cell:last-child { border-right: 16px solid var(--white); border-radius: 0 var(--radius-default) var(--radius-default) 0; box-shadow: inset -1px 0 var(--gray-100), inset 0 1px var(--gray-100), inset 0 -1px var(--gray-100); }
 .enquiries-page__quote-option { display: block; padding-inline-start: 8px; }
 .enquiries-page__badges { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; }
 .enquiries-page__row-actions { position: relative; }
@@ -50,10 +53,56 @@
 .enquiries-page__action-menu a { display: block; padding: 8px; color: var(--gray-700); text-decoration: none; }
 .enquiries-page__action-menu a:hover { background: var(--gray-50); }
 .enquiries-page__action-menu button:hover { background: var(--gray-50); }
-.enquiries-page__status-filters .enquiries-page__dot[data-tone='blue'] { background: var(--primary-300); }
+.enquiries-page__action-menu button:last-child { color: var(--error-400); }
 .enquiries-page__footer { padding: 10px 16px; border-top: 1px solid var(--gray-100); color: var(--gray-500); }
 .enquiries-page__empty { padding: 60px 16px; text-align: center; color: var(--gray-500); }
 .enquiries-page__notice { margin: 0; color: var(--gray-600); }
 @media (max-width: 1100px) { .enquiries-page__insight-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 @media (max-width: 700px) { .enquiries-page { flex-direction: column; } .enquiries-page > .fretara-sidebar { min-height: 0; } .enquiries-page__content { padding: 16px; } .enquiries-page__insight-grid { grid-template-columns: 1fr; } .enquiries-page__table-shell .fretara-table-toolbar { align-items: stretch; } .enquiries-page__table-shell .fretara-table-toolbar__options { justify-content: flex-start; } }
 @media (pointer: coarse) { .enquiries-page__status-filters button { min-height: 44px; } }
+
+.enquiries-page__table-shell[data-view] .fretara-table-toolbar { min-height: 58px; box-sizing: border-box; padding: 8px 16px; }
+.enquiries-page__table-shell[data-view] .fretara-tabs { flex: 0 0 auto; align-self: stretch; }
+.enquiries-page__table-shell[data-view] .fretara-tabs__list { height: 100%; box-shadow: none; }
+.enquiries-page__table-shell[data-view] .fretara-tab__content { padding-inline: 12px; font-size: var(--font-size-16); }
+.enquiries-page__table-shell[data-view] .fretara-table-toolbar { flex-wrap: nowrap; }
+.enquiries-page__table-shell[data-view] .fretara-table-toolbar__options { flex: 0 1 500px; width: 500px; gap: 12px; flex-wrap: nowrap; justify-content: flex-end; margin-inline-start: auto; }
+.enquiries-page__table-shell[data-view] .fretara-table-toolbar__search { flex: 1 1 0; width: auto; min-width: 0; max-width: none; margin-inline-start: auto; }
+.enquiries-page__table-shell[data-view] .fretara-table-toolbar__search .fretara-input { width: 100%; }
+.enquiries-page__table-shell[data-view] .fretara-table-toolbar__search .fretara-input__field { height: 40px; min-height: 40px; padding-inline: 12px; background: var(--white); }
+.enquiries-page__table-shell[data-view] .fretara-table-toolbar__search .fretara-input__icon, .enquiries-page__table-shell[data-view] .fretara-table-toolbar__search .fretara-input__icon > svg { width: 20px; height: 20px; flex-basis: 20px; }
+.enquiries-page__clear-filter.fretara-button { flex: none; min-height: 40px; padding-inline: 8px; }
+.enquiries-page__clear-filter .fretara-button__label, .enquiries-page__inline-clear .fretara-button__label { white-space: nowrap; }
+.enquiries-page__inline-clear.fretara-button { min-height: 36px; padding-inline: 10px; }
+.enquiries-page__table-shell[data-view='enquiries'] .enquiries-page__status-filters { padding-block: 14px 18px; border-bottom: 0; }
+.enquiries-page__table-shell[data-view='quotations'] .enquiries-page__status-filters { padding-block: 14px 18px; border-bottom: 0; }
+.enquiries-page__table-shell[data-view='quotations'] .fretara-table-toolbar__options .enquiries-page__status-select.fretara-dropdown { flex: 0 0 160px; width: 160px; }
+.enquiries-page__table-shell[data-view='quotations'] .enquiries-page__status-select .fretara-dropdown__trigger { height: 40px; min-height: 40px; }
+.enquiries-page__status-filter.fretara-button[aria-pressed='true'] .enquiries-page__count { background: var(--primary-300); color: var(--white); }
+.enquiries-page__sort-summary { display: flex; align-items: center; gap: 8px; padding: 8px 16px 14px; color: var(--gray-500); }
+.enquiries-page__sort-select.fretara-dropdown { width: 248px; }
+.enquiries-page__table-shell .enquiries-page__enquiry-table { min-width: 1340px; }
+.enquiries-page__table-shell .enquiries-page__quotation-table { min-width: 1400px; }
+.enquiries-page__enquiry-table .fretara-table__header { height: 48px; padding-inline: 16px; font-size: var(--font-size-14); }
+.enquiries-page__enquiry-table .fretara-table__cell { height: 61px; padding: 10px 16px; }
+.enquiries-page__enquiry-table .fretara-table__sort { justify-content: flex-start; width: auto; gap: 6px; }
+.enquiries-page__enquiry-table .fretara-table__cell:first-child .fretara-table-content { gap: 12px; }
+.enquiries-page__quotation-table .fretara-table__header { height: 48px; padding-inline: 16px; font-size: var(--font-size-14); }
+.enquiries-page__quotation-table .fretara-table__cell { height: 61px; padding: 10px 16px; }
+.enquiries-page__quotation-table .fretara-table__sort { justify-content: flex-start; width: auto; gap: 6px; }
+.enquiries-page__quotation-table .fretara-table__cell:first-child .fretara-table-content { gap: 12px; }
+.enquiries-page__quotation-table .fretara-table-content__lines { gap: 4px; }
+.enquiries-page__quotation-table .fretara-table-content__secondary { font-size: var(--font-size-14); }
+.enquiries-page__quotation-table .fretara-table__header[aria-sort='ascending'], .enquiries-page__quotation-table .fretara-table__header[aria-sort='descending'] { color: var(--primary-300); }
+.enquiries-page__enquiry-table .fretara-table-content__lines { gap: 4px; }
+.enquiries-page__enquiry-table .fretara-table-content__secondary { font-size: var(--font-size-14); }
+.enquiries-page__enquiry-table .fretara-table__header[aria-sort='ascending'], .enquiries-page__enquiry-table .fretara-table__header[aria-sort='descending'] { color: var(--primary-300); }
+.enquiries-page__table-shell .fretara-table__row:has(.enquiries-page__row-highlight) { background: var(--light-blue); }
+.enquiries-page__table-shell .fretara-table__row:has(.enquiries-page__row-highlight):hover { background: var(--primary-00); }
+.enquiries-page__action-badge { padding: 6px 10px; }
+
+@media (max-width: 700px) {
+  .enquiries-page__table-shell[data-view] .fretara-table-toolbar { flex-wrap: wrap; }
+  .enquiries-page__table-shell[data-view] .fretara-table-toolbar__options { width: 100%; }
+  .enquiries-page__table-shell[data-view] .fretara-table-toolbar__search { width: 100%; min-width: 0; max-width: none; }
+}

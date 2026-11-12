@@ -2,7 +2,6 @@
 @import '../styles/typography.css';
 
 .enquiry-details { display: flex; align-items: stretch; min-height: 100vh; background: var(--gray-50); color: var(--gray-700); font-family: var(--font-family-primary); }
-.enquiry-details > .fretara-sidebar { height: auto; min-height: 100vh; }
 .enquiry-details__main { flex: 1; min-width: 0; }
 .enquiry-details__sticky { position: sticky; top: 0; z-index: 5; padding: 20px 24px 16px; background: var(--gray-50); }
 .enquiry-details__sticky[data-scrolled='true'] { padding: 12px 24px; background: var(--white); border-bottom: 1px solid var(--gray-100); }

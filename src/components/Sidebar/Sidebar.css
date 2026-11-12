@@ -3,10 +3,13 @@
 
   box-sizing: border-box;
   display: flex;
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
   flex: 0 0 260px;
   flex-direction: column;
   width: 260px;
-  height: 100%;
+  height: 100vh;
   min-height: 0;
   overflow: hidden;
   border-right: 1px solid var(--gray-100);
@@ -26,7 +29,6 @@
   align-items: center;
   width: 100%;
   padding: 12px 14px 24px;
-  border-bottom: 1px solid var(--gray-100);
 }
 
 .fretara-sidebar__brand-row {
@@ -234,6 +236,8 @@
 @media (max-width: 700px) {
   .fretara-sidebar,
   .fretara-sidebar[data-collapsed] {
+    position: static;
+    align-self: auto;
     width: 100%;
     min-height: 0;
     height: auto;

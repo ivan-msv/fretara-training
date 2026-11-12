@@ -78,6 +78,10 @@
   --success-400: #16A34A;
   /* Success 500 */
   --success-500: #166534;
+  /* Ready-to-send teal — supplied enquiry status reference. */
+  --teal-50: #F0FDFA;
+  --teal-200: #5EEAD4;
+  --teal-500: #0F766E;
   /* Blue */
   --blue: #0057FF;
   /* Blue surface / Blue border — StatusBadge fills */
