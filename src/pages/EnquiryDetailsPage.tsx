@@ -2,24 +2,20 @@ import { useEffect, useState } from 'react'
 import { Button } from '../components/Button'
 import { Dropdown } from '../components/Dropdown'
 import { Input } from '../components/Input'
-import { Navbar } from '../components/Navbar'
 import { PageHeader } from '../components/PageHeader'
-import { Sidebar } from '../components/Sidebar'
+import { ProductShell } from '../components/ProductShell'
 import { StatusBadge } from '../components/StatusBadge'
 import { Table, TableCell, TableHeaderCell, TableRow, TableText } from '../components/Table'
-import { BulletedListIcon } from '../icons/line/BulletedListIcon'
 import { CalendarBlankIcon } from '../icons/line/CalendarBlankIcon'
 import { ChevronDownIcon } from '../icons/line/ChevronDownIcon'
 import { ChevronUpIcon } from '../icons/line/ChevronUpIcon'
 import { ClockDashIcon } from '../icons/line/ClockDashIcon'
 import { DeleteIcon } from '../icons/line/DeleteIcon'
-import { Dollar2Icon } from '../icons/line/Dollar2Icon'
 import { EditIcon } from '../icons/line/EditIcon'
 import { LayersIcon } from '../icons/line/LayersIcon'
 import { PaperIcon } from '../icons/line/PaperIcon'
 import { PlusIcon } from '../icons/line/PlusIcon'
 import { UserPersonrIcon } from '../icons/line/UserPersonrIcon'
-import { UsersIcon } from '../icons/line/UsersIcon'
 import { EmailThreads } from './EmailThreads'
 import { records, type EnquiryRecord, type Option } from './enquiriesData'
 import './EnquiryDetailsPage.css'
@@ -27,11 +23,6 @@ import './QuotationDetailsPage.css'
 
 type Freight = { weight: string; length: string; width: string; height: string; quantity: string }
 const initialFreight: Freight = { weight: '30', length: '80', width: '100', height: '100', quantity: '1' }
-const navigation = [
-  { id: 'quotations', label: 'Quotations', href: '/', icon: <BulletedListIcon /> },
-  { id: 'margins', label: 'Margins', href: '#margins', icon: <Dollar2Icon /> },
-  { id: 'customers', label: 'Customers', href: '#customers', icon: <UsersIcon /> },
-]
 const charges = [
   ['Freight Charges', '$1,860.00AUD'], ['Fuel levy', '$618.08AUD'], ['Rubbish Removal Per Cbm', '$98.59AUD'],
   ['Vic/Sa/Qld/Wa/Nt/Tas Tipping Fee (Min 0.25 Tonne)', '$112.50AUD'], ['Additional', '$10.00'],
@@ -89,7 +80,6 @@ export function OptionCard({ option, totalOptions, jobReference, onConvert, show
 }
 
 export function EnquiryDetailsPage({ record = records.find(item => item.id === 'jack')! }: { record?: EnquiryRecord }) {
-  const [collapsed, setCollapsed] = useState(false)
   const [options, setOptions] = useState(record.options)
   const [activeId, setActiveId] = useState(record.options[0].id)
   const [scrolled, setScrolled] = useState(false)
@@ -108,17 +98,14 @@ export function EnquiryDetailsPage({ record = records.find(item => item.id === '
   const activeOption = options[activeIndex]
   const convert = (id: string) => { setOptions(current => current.map(option => option.id === id ? { ...option, quotationReference: `Q${String(601 + current.findIndex(item => item.id === id)).padStart(3, '0')}`, quotationStatus: 'Draft' } : option)); setNotice('Quotation draft created for selected option.') }
   const generate = () => { const next = options.find(option => !option.quotationReference); if (next) convert(next.id); else setNotice('All options already have quotations.') }
-  return <div className="enquiry-details">
-    <Sidebar items={navigation} activeItemId="quotations" collapsed={collapsed} onCollapsedChange={setCollapsed} />
-    <div className="enquiry-details__main"><Navbar options={[{ value: 'quotes', label: 'Quote / Tender management' }]} defaultValue="quotes" />
+  return <ProductShell className="enquiry-details" mainClassName="enquiry-details__main" activeItemId="quotations">
       <div className="enquiry-details__sticky" data-scrolled={scrolled}><PageHeader title={options.length === 1 ? record.name : `${options.length} Options`} titleIcon={options.length > 1 ? <LayersIcon /> : undefined} description={<>{options.length > 1 && <><UserPersonrIcon width={16} height={16} aria-hidden="true" />{record.name} · </>}<CalendarBlankIcon width={16} height={16} aria-hidden="true" />{record.date} | {record.time}</>} badge={<StatusBadge type="badge" status={remaining ? 'neutral' : 'blue'} label={remaining ? 'Open enquiry' : 'Quoted'} showDot={false} showLeadingIcon={false} />} showBadge={scrolled} onBack={() => { window.location.href = '/' }} primaryAction={{ label: 'Generate Quote', onClick: generate }} onMore={() => setMoreOpen(!moreOpen)} moreButtonProps={{ 'aria-expanded': moreOpen, 'aria-haspopup': 'menu', 'aria-controls': 'enquiry-more-menu' }} />{moreOpen && <div className="enquiry-details__more-menu" id="enquiry-more-menu" role="menu" onPointerDown={event => event.stopPropagation()}><button type="button" role="menuitem" onClick={() => { void navigator.clipboard.writeText(record.jobReference); setNotice('Job reference copied.'); setMoreOpen(false) }}>Copy job reference</button></div>}</div>
-      <main className="enquiry-details__content"><EmailThreads record={record} />
+      <main className="enquiry-details__content"><EmailThreads record={record} initiallyOpen />
         {options.length > 1 ? <section className="enquiry-details__option-panel" aria-label="Enquiry options">
           <div className="quotation-details__tabs"><div className="quotation-details__tab-list" role="tablist" aria-label="Enquiry options">{options.map((option, index) => <button key={option.id} type="button" role="tab" id={`enquiry-tab-${option.id}`} aria-selected={option.id === activeOption.id} aria-controls="enquiry-panel" tabIndex={option.id === activeOption.id ? 0 : -1} onClick={() => setActiveId(option.id)} onKeyDown={event => { if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return; event.preventDefault(); const buttons = Array.from(event.currentTarget.parentElement!.querySelectorAll<HTMLButtonElement>('[role="tab"]')); const current = buttons.indexOf(event.currentTarget); const next = event.key === 'Home' ? 0 : event.key === 'End' ? buttons.length - 1 : (current + (event.key === 'ArrowRight' ? 1 : -1) + buttons.length) % buttons.length; buttons[next]?.focus(); setActiveId(options[next].id) }}><span>Option {index + 1}</span><small>{option.label}</small></button>)}</div></div>
           <div id="enquiry-panel" role="tabpanel" aria-labelledby={`enquiry-tab-${activeOption.id}`} className="enquiry-details__option-panel-body"><OptionCard key={activeOption.id} option={activeOption} index={activeIndex} totalOptions={options.length} jobReference={record.jobReference} onConvert={convert} /></div>
         </section> : <OptionCard option={activeOption} index={activeIndex} totalOptions={1} jobReference={record.jobReference} onConvert={convert} />}
         {notice && <p className="enquiry-details__notice" role="status"><ClockDashIcon width={16} height={16} />{notice}</p>}
       </main>
-    </div>
-  </div>
+  </ProductShell>
 }

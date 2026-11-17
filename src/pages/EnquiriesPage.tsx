@@ -1,24 +1,20 @@
 import { useEffect, useState } from 'react'
 import { Button } from '../components/Button'
 import { Dropdown } from '../components/Dropdown'
-import { Navbar } from '../components/Navbar'
 import { PageHeader } from '../components/PageHeader'
-import { Sidebar } from '../components/Sidebar'
+import { ProductShell } from '../components/ProductShell'
 import { StatusBadge } from '../components/StatusBadge'
 import { DataTable, TableActions, TableDate, TableFooter, TableText, TableToolbar, type TableColumn, type TableSort } from '../components/Table'
 import { Tabs } from '../components/Tabs'
 import { BoltFillIcon } from '../icons/fill/BoltFillIcon'
 import { FlagFillIcon } from '../icons/fill/FlagFillIcon'
 import { AiChatAssistantIcon } from '../icons/line/AiChatAssistantIcon'
-import { BulletedListIcon } from '../icons/line/BulletedListIcon'
 import { ClockDashIcon } from '../icons/line/ClockDashIcon'
 import { DocumentFileIcon } from '../icons/line/DocumentFileIcon'
-import { Dollar2Icon } from '../icons/line/Dollar2Icon'
 import { FilterIcon } from '../icons/line/FilterIcon'
 import { LayersIcon } from '../icons/line/LayersIcon'
 import { PlusIcon } from '../icons/line/PlusIcon'
 import { StarIcon } from '../icons/line/StarIcon'
-import { UsersIcon } from '../icons/line/UsersIcon'
 import { records, type EnquiryRecord } from './enquiriesData'
 import './EnquiriesPage.css'
 
@@ -55,11 +51,6 @@ type QuotationRow = {
   href: string
 }
 
-const navigation = [
-  { id: 'quotations', label: 'Quotations', href: '#quotations', icon: <BulletedListIcon /> },
-  { id: 'margins', label: 'Margins', href: '#margins', icon: <Dollar2Icon /> },
-  { id: 'customers', label: 'Customers', href: '#customers', icon: <UsersIcon /> },
-]
 const insights = [
   { icon: <FlagFillIcon />, value: '9 High Value', text: 'High-value quotes ready for you', tone: 'warning' },
   { icon: <ClockDashIcon />, value: '15 Need Follow-Up', text: 'Quotes ready for follow-up', tone: 'blue' },
@@ -120,7 +111,6 @@ const quotationStatusOptions = [
 const quotationStatusLabels: Record<QuotationStatus, string> = { draft: 'Draft', ready: 'Ready to send', sent: 'Sent', accepted: 'Client Accepted', approved: 'Approved', expired: 'Expired' }
 
 export function EnquiriesPage({ initialTab = 'enquiries' }: { initialTab?: 'enquiries' | 'quotations' }) {
-  const [collapsed, setCollapsed] = useState(false)
   const [activeTab, setActiveTab] = useState(initialTab)
   const [search, setSearch] = useState('')
   const [activeStatus, setActiveStatus] = useState<string | null>(null)
@@ -193,15 +183,12 @@ export function EnquiriesPage({ initialTab = 'enquiries' }: { initialTab?: 'enqu
   const toolbar = <TableToolbar navigation={<Tabs label="Quotation sections" value={activeTab} onValueChange={changeTab} items={[{ value: 'enquiries', label: 'Enquiries' }, { value: 'quotations', label: 'Quotations' }]} />} search={{ value: search, onChange: event => { setSearch(event.target.value); setPage(1) }, placeholder: activeTab === 'enquiries' ? 'Search by client or enquiry number...' : 'Search by client, quote number or job reference...' }} filters={activeTab === 'quotations' ? <Dropdown className="enquiries-page__status-select" aria-label="Filter quotations by status" leadingIcon={<FilterIcon />} options={quotationStatusOptions} value={quotationStatus} onValueChange={value => { setQuotationStatus(value); setPage(1) }} /> : undefined} actions={hasFilter ? <Button className="enquiries-page__clear-filter" type="button" variant="link" onClick={() => { setActiveStatus(null); setQuotationStatus('all'); setPage(1) }}>Clear filters</Button> : undefined} />
   const sortValue = `${sort.column}:${sort.direction}`
 
-  return <div className="enquiries-page">
-    <Sidebar items={navigation} activeItemId="quotations" collapsed={collapsed} onCollapsedChange={setCollapsed} />
-    <div className="enquiries-page__main"><Navbar options={[{ value: 'quotes', label: 'Quote / Tender management' }]} defaultValue="quotes" />
+  return <ProductShell className="enquiries-page" mainClassName="enquiries-page__main" activeItemId="quotations">
       <main className="enquiries-page__content">
         <PageHeader title="Quotations" description="AI-powered quotation management with intelligent prioritization" primaryAction={{ label: 'New Quotation', leadingIcon: <PlusIcon width={16} height={16} />, onClick: () => setNotice('New quotation flow is not available yet.') }} />
         <section className="enquiries-page__insights" aria-label="AI Insights and Recommendations"><h2 className="heading-18-bold"><AiChatAssistantIcon width={20} height={20} />AI Insights &amp; Recommendations</h2><div className="enquiries-page__insight-grid">{insights.map(item => <article className="enquiries-page__insight" key={item.value} data-tone={item.tone}><strong className="heading-16-bold">{item.icon}{item.value}</strong><p className="body-14-medium">{item.text}</p></article>)}</div></section>
         <section aria-label={`${activeTab === 'enquiries' ? 'Enquiries' : 'Quotations'} table`}><div className="enquiries-page__table-shell" data-view={activeTab}>{toolbar}<div className="enquiries-page__status-filters">{(activeTab === 'enquiries' ? enquiryFilters : quotationActionFilters).map(filter => <Button className="enquiries-page__status-filter" key={filter.value} type="button" variant="secondary" shape="pill" aria-pressed={activeStatus === filter.value} onClick={() => { setActiveStatus(activeStatus === filter.value ? null : filter.value); setPage(1) }}><span className="enquiries-page__dot" data-tone={filter.tone} />{filter.label}<span className="enquiries-page__count">{filter.count}</span></Button>)}{activeStatus && <Button className="enquiries-page__inline-clear" type="button" variant="link" onClick={() => { setActiveStatus(null); setPage(1) }}>Clear</Button>}</div><div className="enquiries-page__sort-summary body-14-medium"><FilterIcon width={20} height={20} aria-hidden="true" /><span>Sorted by</span><Dropdown className="enquiries-page__sort-select" aria-label={`Sort ${activeTab}`} options={sortOptions} value={sortValue} onValueChange={value => { const [column, direction] = value.split(':') as [TableSort['column'], TableSort['direction']]; setSort({ column, direction }); setPage(1) }} /></div>{activeTab === 'enquiries' ? <DataTable className="enquiries-page__enquiry-table" label="Enquiries" columns={enquiryColumns} rows={page === 1 ? visibleEnquiries.slice(0, 12) : []} getRowId={row => row.record.id} getRowHref={row => `/enquiries/${row.record.id}`} sort={sort} onSortChange={next => { setSort(next); setPage(1) }} footer={<TableFooter page={page} pageSize={12} total={activeStatus ? enquiryFilters.find(filter => filter.value === activeStatus)?.count ?? visibleEnquiries.length : 1689} onPageChange={setPage} />} /> : <DataTable className="enquiries-page__quotation-table" label="Quotations" columns={quotationColumns} rows={page === 1 ? visibleQuotations.slice(0, 12) : []} getRowId={row => row.id} getRowHref={row => row.href} sort={sort} onSortChange={next => { setSort(next); setPage(1) }} footer={<TableFooter page={page} pageSize={12} total={hasFilter ? visibleQuotations.length : 248} onPageChange={setPage} />} />}</div></section>
         {notice && <p className="enquiries-page__notice" role="status">{notice}</p>}
       </main>
-    </div>
-  </div>
+  </ProductShell>
 }

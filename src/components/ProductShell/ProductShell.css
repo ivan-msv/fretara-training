@@ -1,0 +1,21 @@
+@import '../../styles/tokens.css';
+@import '../../styles/typography.css';
+
+.fretara-product-shell {
+  display: flex;
+  align-items: stretch;
+  min-height: 100vh;
+  background: var(--gray-50);
+  color: var(--gray-700);
+  font-family: var(--font-family-primary);
+}
+
+.fretara-product-shell__main {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 700px) {
+  .fretara-product-shell { flex-direction: column; }
+  .fretara-product-shell > .fretara-sidebar { min-height: 0; }
+}

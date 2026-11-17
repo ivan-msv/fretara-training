@@ -1,27 +1,18 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Button } from '../components/Button'
-import { Navbar } from '../components/Navbar'
 import { PageHeader } from '../components/PageHeader'
-import { Sidebar } from '../components/Sidebar'
+import { ProductShell } from '../components/ProductShell'
 import { StatusBadge } from '../components/StatusBadge'
-import { BulletedListIcon } from '../icons/line/BulletedListIcon'
 import { CalendarBlankIcon } from '../icons/line/CalendarBlankIcon'
 import { DocumentFileIcon } from '../icons/line/DocumentFileIcon'
-import { Dollar2Icon } from '../icons/line/Dollar2Icon'
 import { LayersIcon } from '../icons/line/LayersIcon'
 import { PlusIcon } from '../icons/line/PlusIcon'
 import { UserPersonrIcon } from '../icons/line/UserPersonrIcon'
-import { UsersIcon } from '../icons/line/UsersIcon'
 import { EmailThreads } from './EmailThreads'
 import { OptionCard } from './EnquiryDetailsPage'
 import { quotationRecords, type QuotationOption, type QuotationRecord, type QuotationState } from './quotationData'
 import './QuotationDetailsPage.css'
 
-const navigation = [
-  { id: 'quotations', label: 'Quotations', href: '/', icon: <BulletedListIcon /> },
-  { id: 'margins', label: 'Margins', href: '#margins', icon: <Dollar2Icon /> },
-  { id: 'customers', label: 'Customers', href: '#customers', icon: <UsersIcon /> },
-]
 
 function OptionTabs({ options, activeId, onChange, onAdd, idPrefix }: { options: QuotationOption[]; activeId: string; onChange: (id: string) => void; onAdd: () => void; idPrefix: string }) {
   return <div className="quotation-details__tabs">
@@ -36,7 +27,6 @@ export function QuotationDetailsPage({ state = 'single' }: { state?: QuotationSt
   const requestedOption = Number.isInteger(requestedIndex) && !source.options[requestedIndex]?.deleted ? source.options[requestedIndex] : undefined
   const [record, setRecord] = useState<QuotationRecord>(source)
   const [activeId, setActiveId] = useState(requestedOption?.id ?? source.initialOptionId)
-  const [collapsed, setCollapsed] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [notice, setNotice] = useState('')
   const [moreOpen, setMoreOpen] = useState(false)
@@ -59,16 +49,13 @@ export function QuotationDetailsPage({ state = 'single' }: { state?: QuotationSt
   const sharedOption = { id: active.id, label: active.label, enquiryReference: active.quotationReference, quotationReference: active.quotationReference, quotationStatus: 'Draft' as const }
   const statusBadge = <StatusBadge type="badge" status="neutral" label={active.status} showDot={false} showLeadingIcon={false} />
   const tabs = record.options.length > 1 && <OptionTabs idPrefix="regular" options={record.options} activeId={active.id} onChange={setActiveId} onAdd={addOption} />
-  return <div className="quotation-details">
-    <Sidebar items={navigation} activeItemId="quotations" collapsed={collapsed} onCollapsedChange={setCollapsed} />
-    <div className="quotation-details__main">
-      <Navbar options={[{ value: 'quotes', label: 'Quote / Tender management' }]} defaultValue="quotes" />
+  return <ProductShell className="quotation-details" mainClassName="quotation-details__main" activeItemId="quotations">
       <div className="quotation-details__regular-header">
-        <PageHeader title={`${record.options.length} Option${record.options.length === 1 ? '' : 's'}`} titleIcon={record.options.length === 1 ? <DocumentFileIcon /> : <LayersIcon />} description={<><UserPersonrIcon width={16} height={16} />{record.customer} · <CalendarBlankIcon width={16} height={16} />{record.date} | {record.time}</>} onBack={() => { window.location.href = '/' }} secondaryAction={{ label: 'Generate Quote', onClick: () => setNotice('Quotation regenerated in this preview.') }} primaryAction={{ label: 'Send Quote', onClick: () => setNotice('Quotation marked as sent in this preview.') }} onMore={() => setMoreOpen(open => !open)} moreButtonProps={{ 'aria-expanded': moreOpen, 'aria-haspopup': 'menu', 'aria-controls': 'quotation-more-menu' }} />
+        <PageHeader title={record.options.length === 1 ? active.quotationReference : `${record.options.length} Options`} titleIcon={record.options.length === 1 ? <DocumentFileIcon /> : <LayersIcon />} description={<><UserPersonrIcon width={16} height={16} />{record.customer} · <CalendarBlankIcon width={16} height={16} />{record.date} | {record.time}</>} status={record.options.length === 1 ? statusBadge : undefined} onBack={() => { window.location.href = '/' }} secondaryAction={{ label: 'Generate Quote', onClick: () => setNotice('Quotation regenerated in this preview.') }} primaryAction={{ label: 'Send Quote', onClick: () => setNotice('Quotation marked as sent in this preview.') }} onMore={() => setMoreOpen(open => !open)} moreButtonProps={{ 'aria-expanded': moreOpen, 'aria-haspopup': 'menu', 'aria-controls': 'quotation-more-menu' }} />
         {moreOpen && <div className="quotation-details__more-menu" id="quotation-more-menu" role="menu" onPointerDown={event => event.stopPropagation()}><button type="button" role="menuitem" onClick={() => { setNotice('Quotation duplicated in this preview.'); setMoreOpen(false) }}>Duplicate quotation</button><button type="button" role="menuitem" onClick={() => { void navigator.clipboard.writeText(active.quotationReference); setNotice('Quotation reference copied.'); setMoreOpen(false) }}>Copy reference</button></div>}
       </div>
       <main className="quotation-details__content">
-        <EmailThreads record={{ id: 'jack', name: record.customer, email: 'jack@gmail.com', subject: 'Request for Pallet Shipping Quote – Melbourne', received: `${record.date} | ${record.time}`, date: record.date, time: record.time, jobReference: record.jobReference, enquiryStatus: 'review', options: [] }} />
+        <EmailThreads record={{ id: 'jack', name: record.customer, email: 'jack@gmail.com', subject: 'Request for Pallet Shipping Quote – Melbourne', received: `${record.date} | ${record.time}`, date: record.date, time: record.time, jobReference: record.jobReference, enquiryStatus: 'review', options: [] }} initiallyOpen />
         <section className="quotation-details__quote" data-open-enquiry={active.status === 'Open enquiry'} id="quotation-panel" role="tabpanel" aria-labelledby={`regular-quotation-tab-${active.id}`}>
           {tabs}
           <div className="quotation-details__quote-heading"><div><strong className="heading-24-bold">{active.quotationReference}</strong>{statusBadge}</div>{active.status === 'Draft' && <Button type="button" variant="secondary" onClick={() => setNotice('PDF preview opened in this preview.')}>PDF Preview</Button>}</div>
@@ -80,6 +67,5 @@ export function QuotationDetailsPage({ state = 'single' }: { state?: QuotationSt
         {record.options.length > 1 && <OptionTabs idPrefix="sticky" options={record.options} activeId={active.id} onChange={setActiveId} onAdd={addOption} />}
         <div className="quotation-details__sticky-heading"><div><DocumentFileIcon /><strong className="heading-24-bold">{active.quotationReference}</strong>{statusBadge}</div>{active.status === 'Draft' && <Button type="button" variant="secondary" onClick={() => setNotice('PDF preview opened in this preview.')}>PDF Preview</Button>}</div>
       </div>
-    </div>
-  </div>
+  </ProductShell>
 }

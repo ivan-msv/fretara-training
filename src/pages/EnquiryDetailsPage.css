@@ -1,8 +1,6 @@
 @import '../styles/tokens.css';
 @import '../styles/typography.css';
 
-.enquiry-details { display: flex; align-items: stretch; min-height: 100vh; background: var(--gray-50); color: var(--gray-700); font-family: var(--font-family-primary); }
-.enquiry-details__main { flex: 1; min-width: 0; }
 .enquiry-details__sticky { position: sticky; top: 0; z-index: 5; padding: 20px 24px 16px; background: var(--gray-50); }
 .enquiry-details__sticky[data-scrolled='true'] { padding: 12px 24px; background: var(--white); border-bottom: 1px solid var(--gray-100); }
 .enquiry-details__sticky[data-scrolled='true'] .fretara-page-header__back { display: none; }
@@ -90,5 +88,5 @@
 .enquiry-details__note small { color: var(--gray-500); }
 .enquiry-details__notice { display: flex; align-items: center; gap: 6px; margin: 0; padding: 10px; color: var(--gray-600); }
 @media (max-width: 900px) { .enquiry-details__places { grid-template-columns: 1fr; } .enquiry-details__freight { grid-template-columns: repeat(3, 1fr); } }
-@media (max-width: 700px) { .enquiry-details { flex-direction: column; } .enquiry-details > .fretara-sidebar { min-height: 0; } .enquiry-details__sticky, .enquiry-details__content { padding-inline: 16px; } .enquiry-details__dates { grid-template-columns: 1fr; gap: 12px; } .enquiry-details__dates > div { padding: 0; border-right: 0; } .enquiry-details__freight { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 700px) { .enquiry-details__sticky, .enquiry-details__content { padding-inline: 16px; } .enquiry-details__dates { grid-template-columns: 1fr; gap: 12px; } .enquiry-details__dates > div { padding: 0; border-right: 0; } .enquiry-details__freight { grid-template-columns: repeat(2, 1fr); } }
 @media (pointer: coarse) { .enquiry-details__card-heading button, .enquiry-details__item-actions button { min-width: 44px; min-height: 44px; } }

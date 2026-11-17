@@ -1,0 +1,22 @@
+@import '../styles/tokens.css';
+@import '../styles/typography.css';
+
+.customer-details__content { display: flex; flex-direction: column; gap: 16px; padding: 20px 24px 36px; }
+.customer-details__form { display: flex; flex-direction: column; gap: 16px; }
+.customer-details__card { padding: 16px; border: 1px solid var(--gray-100); border-radius: var(--radius-default); background: var(--white); }
+.customer-details__section-heading { margin-bottom: 12px; }
+.customer-details__section-heading h2, .customer-details__section-heading p { margin: 0; }
+.customer-details__section-heading p { margin-top: 2px; color: var(--gray-400); }
+.customer-details__grid { display: grid; gap: 12px 16px; }
+.customer-details__grid--three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.customer-details__grid > *, .customer-details__rate-fields > * { min-width: 0; }
+.customer-details__grid .fretara-dropdown, .customer-details__rate-fields .fretara-dropdown { width: 100%; }
+.customer-details__address { min-width: 0; margin: 16px 0 0; padding: 24px 0 0; border: 0; border-top: 1px solid var(--gray-100); }
+.customer-details__address legend { margin-bottom: 12px; padding: 0; }
+.customer-details__rate-basis { display: flex; gap: 24px; margin: 0 0 20px; padding: 0; border: 0; }
+.customer-details__rate-fields { display: grid; grid-template-columns: 350px 168px 350px; gap: 24px; align-items: end; }
+.customer-details__actions { display: flex; justify-content: flex-end; gap: 16px; padding-top: 8px; }
+.customer-details__error { display: block; margin-top: 4px; color: var(--error-400); }
+.customer-details__sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+@media (max-width: 1100px) { .customer-details__grid--three { grid-template-columns: repeat(2, minmax(0, 1fr)); } .customer-details__rate-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 700px) { .customer-details__content { padding-inline: 16px; } .customer-details__grid--three, .customer-details__rate-fields { grid-template-columns: 1fr; } }

@@ -6,7 +6,7 @@
 .email-threads__subject { display: flex; flex-direction: column; gap: 12px; min-height: 94px; box-sizing: border-box; padding: 12px; border: 1px solid var(--gray-100); border-radius: var(--radius-lg); background: var(--gray-50); }
 .email-threads__subject > strong { color: var(--black); }
 .email-threads__review, .email-threads__changes { border: 1px solid var(--warning-100); border-radius: var(--radius-default); background: var(--warning-50); color: var(--warning-500); }
-.email-threads__review-heading { display: flex; align-items: center; gap: 6px; width: 100%; padding: 10px 12px 4px; border: 0; background: transparent; color: inherit; font: inherit; font-weight: var(--font-weight-bold); text-align: left; cursor: default; }
+.email-threads__review-heading { display: flex; align-items: center; gap: 6px; width: 100%; padding: 10px 12px 4px; border: 0; background: transparent; color: inherit; font: inherit; font-weight: var(--font-weight-bold); text-align: left; cursor: pointer; }
 .email-threads__review-heading span { flex: 1; }
 .email-threads__review ul { margin: 0; padding: 0 12px 10px 38px; }
 .email-threads__changes { padding: 10px 12px; }
